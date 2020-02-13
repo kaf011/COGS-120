@@ -9,11 +9,9 @@ var path = require('path');
 var handlebars = require('express3-handlebars');
 
 var index = require('./routes/index');
-var profile = require('./routes/profile');
-var step1 = require('./routes/step1');
-var profile_records = require('./routes/profile_records');
+var hello = require('./routes/hello');
 
-//var project = require('./routes/project');
+var project = require('./routes/project');
 
 // Example route
 // var user = require('./routes/user');
@@ -40,10 +38,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// Add routes here
 app.get('/', index.view);
-app.get('/profile', profile.viewProject);
-app.get('/profile_records', profile_records.viewProject);
-
+app.get('/hello/:userName', hello.view);
+app.get('/project/:name', project.viewProject);
 // Example route
 // app.get('/users', user.list);
 
