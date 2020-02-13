@@ -1,6 +1,6 @@
 var data = require("../data.json");
 
-exports.addRecord = function(request, response) {  
+exports.addRecord = function(request, response) {
     var d = new Date();
 	var newDate = d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate();
     var newTime = d.getHours()+":"+d.getMinutes();
@@ -13,5 +13,5 @@ exports.addRecord = function(request, response) {
     data.records.reverse();
     data.records.push(newRecord);
     data.records.reverse();
-	response.render('profile_records', data);
-}	
+	response.render('profile', data);
+}
