@@ -33,8 +33,19 @@
 
 
     <section>
+    {{#each records}}
 
       <div class="record">
+        <button type="button" class="btn btn-light btn-lg record-btn">
+          <td class="date">{{Date}} </td>
+          <td class="time"> {{Time}} </td>
+          <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
+        </button>	
+	    </div>
+		{{/each}}
+    <hr>
+
+      <!-- <div class="record">
         <button type="button" class="btn btn-light btn-lg record-btn">
           <td class="date">Jan 25 Tuesday </td>
           <td class="time"> 6:00 PM </td>
@@ -85,7 +96,7 @@
           <td>Jan 25 Saturday 12:04 PM </td>
           <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
         </button>
-      </div>
+      </div> -->
 
     </section>
 
@@ -103,7 +114,7 @@
 
 
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 </body>
 
 </html>
