@@ -45,45 +45,24 @@
 
 
 
-    <div class="record">
-      <button type="button" class="btn btn-light btn-lg record-btn">
-        <td class="date">Jan 25 Tuesday </td>
-        <td class="time"> 6:00 PM </td>
-        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></td>
-      </button>
-    </div>
-    <div class="record">
-      <button type="button" class="btn btn-light btn-lg record-btn">
-        <td class="date">Jan 25 Tuesday </td>
-        <td class="time"> 11:00 AM </td>
-        <td><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
-      </button>
-    </div>
-    <div class="record">
-      <button type="button" class="btn btn-light btn-lg record-btn">
-        <td class="date">Jan 24 Monday </td>
-        <td class="time"> 12:00 PM </td>
-        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></td>
-      </button>
-    </div>
-    <div class="record">
-      <button type="button" class="btn btn-light btn-lg record-btn">
-        <td class="date">Jan 25 Monday </td>
-        <td class="time"> 6:24 PM </td>
-        <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></td>
-      </button>
-    </div>
+    {{#each records}}
 
-    <hr>
+      <div class="record">
+        <button type="button" class="btn btn-light btn-lg record-btn">
+          <td class="date">{{Date}} </td>
+          <td class="time"> {{Time}} </td>
+          <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
+        </button>
+      </div>
+    {{/each}}
 
-    <div class="record">
+    <div>
       <a href="profile_records">
-        <button type="button" class="btn btn-dark btn-lg more-btn">
+        <button type="button" class="btn btn-dark btn-lg more-btn" style="position:absolute; top:800px;">
           See All Meal Records
         </button>
       </a>
     </div>
-
 
 
   </div>

@@ -2,42 +2,42 @@
 	"records": [
 		{
 			"Date": "Jan 25 Tuesday ",
-			"Time:": "6:00 PM",
+			"Time": "6:00 PM",
 			"Health": "fas fa-star-half-alt"
 		},
 		{
       "Date": "Jan 25 Tuesday ",
-			"Time:": "6:00 PM",
+			"Time": "6:00 PM",
 			"Health": ""
 		},
 		{
       "Date": "Jan 24 Monday ",
-			"Time:": "11:00 AM ",
+			"Time": "11:00 AM ",
 			"Health": "fas fa-star-half-alt"
 		},
 		{
       "Date": "Jan 24 Monday ",
-			"Time:": "5:00 PM ",
+			"Time": "5:00 PM ",
 			"Health": "far fa-star"
 		},
 		{
       "Date": "Jan 25 Sunday ",
-			"Time:": "12:00 PM",
+			"Time": "12:00 PM",
 			"Health": ""
 		},
 		{
       "Date": "Jan 25 Sunday ",
-			"Time:": "11:03 PM ",
+			"Time": "11:03 PM ",
 			"Health": "fas fa-star"
 		},
     {
       "Date": "Jan 25 Saturday ",
-			"Time:": "6:18 PM ",
+			"Time": "6:18 PM ",
 			"Health": ""
 		},
     {
       "Date": "Jan 25 Saturday 6:18 PM ",
-			"Time:": "12:04 PM ",
+			"Time": "12:04 PM ",
 			"Health": "far fa-star"
 		}
 	]

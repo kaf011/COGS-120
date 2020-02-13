@@ -57,3 +57,7 @@ hr{
 .avatar-img{
   border: 5px solid #494949 !important;
 }
+
+.record{
+  overflow:hidden;
+}

@@ -11,7 +11,7 @@ $(document).ready(function() {
 function initializePage() {
 
 	// example: $("#div-id").click(functionToCall);
-	$("button.record-btn").click(projectClick);
+	$(".record-btn").click(projectClick);
 
 }
 
@@ -23,12 +23,13 @@ function projectClick(e) {
     // the object that triggered the event 
     //$(this).css("background-color", "#7fff00");
 
-		var containingProject = $(this).closest(".record");
-		var detail = $(containingProject).find(".record-detail");
-		var date = $(containingProject).find(".date");
-		var time = $(containingProject).find(".time");
+	  //var containingProject = $(this).closest(".record");
+		var detail = $(this).find(".record-detail");
+		var date = $(this).find(".date").text;
+		var time = $(this).find(".time").text;
 		if (detail.length == 0){
-			$(containingProject).append("<div class='record-detail'><h1>Meal Record</h1><p>Date: </p><p>Meal Starts: </p><p>Meal Ends: </p><p>Durition: </p><p>Health Rate: </p>");
+			var string = `<div class="record-detail"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Meal Ends: </p><p>Durition: </p><p>Health Rate: </p>`;
+			$(this).append(string);
 			// $(containingProject).append($(date).text);
 			// $(containingProject).append("<text>Start Time: </text>");
 			// $(containingProject).append($(time).text);
