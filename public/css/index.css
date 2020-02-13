@@ -1,0 +1,42 @@
+#login_logo{
+  color: black;
+  text-align: center;
+  font-size: 45px;
+  margin:200px 0px 30px;
+}
+.username_login{
+  width: 60%;
+  padding: 8px 10px;
+  margin: 6px 0;
+  display:inline-block;
+  border: 1px solid #ccc;
+  border-color: #494949;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.password_login{
+  width: 60%;
+  padding: 8px 10px;
+  margin: 6px 0;
+  display:inline-block;
+  border: 1px solid #ccc;
+  border-color: #494949;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.login_button{
+  width:60%;
+  padding: 8px 10px;
+  margin: 6px 0;
+  background:#ccc;
+  border-radius: 20px;
+}
+.login_button:hover{
+  color:white;
+  width:60%;
+  padding: 8px 10px;
+  margin: 6px 0;
+  background:#494949;
+  border-radius: 20px;
+  transition: all 0.4s ease 0s;
+}

@@ -9,9 +9,15 @@ var path = require('path');
 var handlebars = require('express3-handlebars');
 
 var index = require('./routes/index');
+var home = require('./routes/home');
 var profile = require('./routes/profile');
-var step1 = require('./routes/step1');
 var profile_records = require('./routes/profile_records');
+var signup = require('./routes/signup');
+var step1 = require('./routes/step1');
+var step2 = require('./routes/step2');
+var step3 = require('./routes/step3');
+var forget_your_password = require('./routes/forget_your_password');
+var finish = require('./routes/finish');
 
 //var project = require('./routes/project');
 
@@ -41,9 +47,15 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.get('/home', home.view);
 app.get('/profile', profile.viewProject);
 app.get('/profile_records', profile_records.viewProject);
 app.get('/step1', step1.viewProject);
+app.get('/step2', step2.viewProject);
+app.get('/step3', step3.viewProject);
+app.get('/signup', signup.viewProject);
+app.get('/forget_your_password', forget_your_password.viewProject);
+app.get('/finish', finish.viewProject);
 
 // Example route
 // app.get('/users', user.list);
