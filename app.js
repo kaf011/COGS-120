@@ -57,11 +57,7 @@ app.get('/step3', step3.viewProject);
 app.get('/signup', signup.viewProject);
 app.get('/forget_your_password', forget_your_password.viewProject);
 app.get('/finish', finish.viewProject);
-<<<<<<< HEAD
 app.get('/add', add.addRecord);
-=======
-//app.get('/add', add.addRecord);
->>>>>>> 16c13f1b9f4f253397adad5e8b26410d79f09757
 
 // Example route
 // app.get('/users', user.list);

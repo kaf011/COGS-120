@@ -1,14 +1,15 @@
 var data = require("../data.json");
 
 exports.addRecord = function(request, response) {  
-	var newDate = request.query.name;
-    var newTime = request.query.description;
-    var rate = request.query.Health
+    var d = new Date();
+	var newDate = d.getDate();
+    var newTime = d.getTime();
+    var rate = "fas fa-star-half-alt";
 	var newRecord = {
-	 'Date': newDate,
-	 'Time': newTime,
-	 'Health': rate,
+	 "Date": newDate,
+	 "Time": newTime,
+	 "Health": rate,
 	};
 	data.friends.push(newRecord);
-	response.render('profile', data);
+	response.render('profile_records', data);
 }	
