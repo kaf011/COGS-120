@@ -43,6 +43,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/profile', profile.viewProject);
 app.get('/profile_records', profile_records.viewProject);
+app.get('/step1', step1.viewProject);
 
 // Example route
 // app.get('/users', user.list);
