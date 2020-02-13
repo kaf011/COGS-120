@@ -1,34 +1,35 @@
 <html>
+
 <head>
-	<title>Home Page</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=diveci-width,initial-scale=1.0">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href = "/css/index.css" rel="stylesheet">
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=diveci-width,initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
 </head>
+
 <body>
-	<a href="#" class="logout">LOG OUT</a>
+  <h1 id="login_logo">EatBuddy</h1>
+    <div style="text-align:center;">
+      <input class="username_login" id="username" type="text" placeholder="Username" required>
+      <input class="password_login" id="password" type="text" placeholder="Password" required>
+      <button class="btn login_button" onclick="window.location.href='index.html'">Login</button>
+    </div>
+    <div style="text-align:center;">
+      <a href="forget_your_password.html"> Forget Your Password? </a>
+      <p style="margin:20px 0px 0px;"> Or </p>
+      <p style="margin:0px 0px 10px"> 1 </p>
 
-	<div class = "container" style="position:relative; top:100px;">
-		<h1>Welcome!</h1>
-		<h2>
-			<p>Your Eating Buddy Is Waiting For You...</p>
-		</h2>
-	</div>
-
-
-
-	<div class="button_cont" style = "text-align:center">
-		<a class="home_button" href="step1">Start Eating</a>
-	</div>
-	<div class="button_cont" style = "text-align:center">
-		<a class="home_button2" href="profile">My Eat Buddy</a>
-	</div>
+      <a style="color:black"> Don't have an Account? </a>
+      <a href="signup"> Sign up now! </a>
+    </div>
 
 
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
