@@ -3,6 +3,8 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	//$('#profile_record').hide();
+	$('#profile_record tr:gt(4)').remove();
 })
 
 /*

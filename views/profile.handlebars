@@ -44,17 +44,18 @@
 
 
 
-
+    <table id="profile_record">
     {{#each records}}
 
-      <div class="record">
-        <button type="button" class="btn btn-light btn-lg record-btn">
+      <tr class="record">
+        <!--button type="button" class="btn btn-light btn-lg record-btn"-->
           <td class="date">{{Date}} </td>
           <td class="time"> {{Time}} </td>
           <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
-        </button>
-      </div>
+        <!--/button-->
+      </tr>
     {{/each}}
+    </table>
 
     <div>
       <a href="profile_records">
