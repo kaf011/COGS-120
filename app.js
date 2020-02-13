@@ -18,6 +18,7 @@ var step2 = require('./routes/step2');
 var step3 = require('./routes/step3');
 var forget_your_password = require('./routes/forget_your_password');
 var finish = require('./routes/finish');
+var add = require('./routes/add');
 
 //var project = require('./routes/project');
 
@@ -56,6 +57,7 @@ app.get('/step3', step3.viewProject);
 app.get('/signup', signup.viewProject);
 app.get('/forget_your_password', forget_your_password.viewProject);
 app.get('/finish', finish.viewProject);
+app.get('/add', add.addRecord);
 
 // Example route
 // app.get('/users', user.list);
