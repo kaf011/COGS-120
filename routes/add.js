@@ -9,7 +9,9 @@ exports.addRecord = function(request, response) {
 	 "Date": newDate,
 	 "Time": newTime,
 	 "Health": rate,
-	};
-	data.records.push(newRecord);
+    };
+    data.records.reverse();
+    data.records.push(newRecord);
+    data.records.reverse();
 	response.render('profile_records', data);
 }	
