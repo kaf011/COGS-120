@@ -44,22 +44,24 @@
 
 
 
-    <table id="profile_record">
+    <ul id="profile_record">
     {{#each records}}
 
-      <tr class="record">
-        <!--button type="button" class="btn btn-light btn-lg record-btn"-->
-          <td class="date">{{Date}} </td>
-          <td class="time"> {{Time}} </td>
-          <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
-        <!--/button-->
-      </tr>
+      <li class="record" id="{{id}}">
+        <!-- <a class="record-btn" href="#"> -->
+        <button type="button" class="btn btn-light btn-lg record-btn">
+          <a href="#" class="date"> {{Date}}</a>
+          <a href="#" class="time"> {{Time}} </a>
+          <a href="#" class="health"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></a>
+        </button>
+        <!-- </a> -->
+      </li>
     {{/each}}
-    </table>
+    </ul>
 
     <div>
       <a href="profile_records">
-        <button type="button" class="btn btn-dark btn-lg more-btn" style="position:absolute; top:800px;">
+        <button type="button" class="btn btn-dark btn-lg more-btn">
           See All Meal Records
         </button>
       </a>
