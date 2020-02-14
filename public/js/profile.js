@@ -11,10 +11,32 @@ $(document).ready(function() {
 function initializePage() {
 
 	// example: $("#div-id").click(functionToCall);
-	$(".record-btn").click(projectClick);
+	//$(".record-btn").click(projectClick);
+	$("a.record").click(addProjectDetails);
 
 }
 
+function addProjectDetails(e) {
+	// Prevent following the link
+	e.preventDefault();
+
+	// Get the div date
+	var recordDate = $(this).closest('.record').attr('Date');
+
+  $.get("/profile/"+recordDate, callBackFn);
+
+	console.log("User clicked on record " + recordDate);
+
+	console.log("URL: " + "/profile/"+recordDate);
+}
+
+
+function callBackFn(result){
+  console.log(result);
+	var projectHTML = '<div class="record-detail"><h2>Meal Record</h2><p>Date: ' + record["Date"] + '</p><p>Time: " +${time}</p><p>Meal Ends: </p><p>Durition: </p><p>Health Rate: </p>';
+  console.log(projectHTML);
+	$("#project"+result["id"]+" .details").html(projectHTML);
+}
 
 function projectClick(e) {
     // prevent the page from reloading 

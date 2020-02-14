@@ -47,13 +47,16 @@
 
     {{#each records}}
 
-      <div class="record">
-        <button type="button" class="btn btn-light btn-lg record-btn">
-          <td class="date">{{Date}} </td>
-          <td class="time"> {{Time}} </td>
-          <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
-        </button>
-      </div>
+
+        <a class="record" href="#">
+           <button type="button" class="btn btn-light btn-lg record-btn">
+             <td class="date">{{Date}} </td>
+             <td class="time"> {{Time}} </td>
+             <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
+           </button>
+        </a>
+        <div class="details"></div>
+  
     {{/each}}
 
     <div>
