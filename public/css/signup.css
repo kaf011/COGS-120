@@ -9,9 +9,7 @@ html {
 	/*Image only BG fallback*/
 
 	/*background = gradient + image pattern combo*/
-	background:
-		/*linear-gradient(#909090, #505050);*/
-		white;
+	background-image:url("/images/signup.jpg");
 }
 
 body {
@@ -56,7 +54,7 @@ body {
 /*buttons*/
 #msform .action-button {
 	width: 40%;
-	background: #27AE60;
+	background: #FFAF23;
 	font-weight: bold;
 	color: white;
 	border: 0 none;
@@ -140,7 +138,7 @@ body {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #27AE60;
+	background: #FFAF23;
 	color: white;
 }
 

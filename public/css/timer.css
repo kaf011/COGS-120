@@ -1,4 +1,7 @@
 /* start main style */
+body{
+  background-image:url("/images/timer.jpg");
+}
 #header2{
     display: none;
   }

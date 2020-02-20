@@ -1,3 +1,6 @@
+body{
+	background-image:url("/images/main.jpg");
+}
 .logout {
 	background-color:#494949;
 	border-radius:24px;
