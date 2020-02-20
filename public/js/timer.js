@@ -94,6 +94,7 @@ set.onclick = () => {
 
         set.style.display = 'none';
         header.style.display = 'none';
+        header1.style.display = 'none';
         header2.style.display = 'block';
         controls.style.display = 'block';
 

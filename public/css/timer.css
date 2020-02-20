@@ -5,14 +5,6 @@ body{
 #header2{
     display: none;
   }
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    text-align: center;
-    font-family: tahoma;
-  }
 
   /* end main style */
 
@@ -105,7 +97,6 @@ body{
   .containe .set {
     background: none;
     padding: 10px 40px;
-    border: 1px solid #black;
     color: black;
     margin: 100px auto;
     text-transform: uppercase;
