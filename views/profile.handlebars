@@ -23,24 +23,27 @@
 </head>
 
 <body>
+  <div>
+    <a href="home"><button type="button" class="btn back-btn">Back</button></a>
+  </div>
   <div class="container" style="position:relative; top:20px;">
-    <div>
-      <a href="home"><button type="button" class="btn btn-dark btn-lg back-btn">Back</button></a>
-    </div>
+
 
     <div class="info">
       <div class="col-lg-6">
-        <img class="avatar-img" src="/images/dog.jpeg" alt="avatar">
+        <button class="avatar-btn" type="button" name="button">
+          <img class="avatar-img" src="/images/shiba-inu.png" alt="avatar">
+        </button>
+
       </div>
 
       <div class="col-lg-6">
-        <h1>{{DuoDuo}}</h1>
+        <h1>DuoDuo</h1>
         <h3>Health Rate</h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
 
       </div>
     </div>
-
-    <hr>
+    <h1 style="color:#ffffff"><img src="/images/calendar.png" width="10%" alt="" style="margin:13px;"/>Meal Records</h1>
 
 
 
@@ -59,9 +62,9 @@
     {{/each}}
     </ul>
 
-    <div>
+    <div align=center>
       <a href="profile_records">
-        <button type="button" class="btn btn-dark btn-lg more-btn">
+        <button type="button" class="btn btn-lg more-btn">
           See All Meal Records
         </button>
       </a>
@@ -71,8 +74,9 @@
   </div>
 
 
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+
 </body>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </html>
