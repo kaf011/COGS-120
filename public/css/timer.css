@@ -1,126 +1,130 @@
 /* start main style */
-body{
-  background-image:url("/images/timer.jpg");
+body {
+  background-image: url("/images/timer.jpg");
 }
-#header2{
-    display: none;
-  }
 
-  /* end main style */
+#header2 {
+  display: none;
+}
 
-  /* start container */
+.img {
+  width: 10rem;
+}
 
-  .containe {
-    width: 100%;
-    margin-top: 20%;
-    padding-top: 50px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+/* end main style */
+/* start container */
+.containe {
+  width: 100%;
+  margin-top: 20%;
+  padding-top: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-  .containe h1 {
-    color: black;
-    font-size: 72px;
-    font-weight: 300;
-    margin-top: 10%;
-    margin-bottom: 100px;
-  }
+.containe h1 {
+  color: black;
+  font-size: 72px;
+  font-weight: 300;
+  margin-top: 10%;
+  margin-bottom: 100px;
+}
 
-  .containe h3 {
-    font-size: 30px;
-    color: black;
-    margin-left: 30px;
-  }
+.containe h3 {
+  font-size: 30px;
+  color: black;
+  margin-left: 30px;
+}
 
-  .containe p {
-    color: black;
-    font-size: 25px;
-    margin-top: 0;
-    margin-left: -10px;
-  }
+.containe p {
+  color: black;
+  font-size: 25px;
+  margin-top: 0;
+  margin-left: -10px;
+}
 
-  .containe .plus {
-    background: none;
-    border: 0;
-    color: black;
-    position: absolute;
-    top: -60px;
-    left: 5px;
-    transition: .3s;
-    cursor: pointer;
-    outline: 0;
-  }
+.containe .plus {
+  background: none;
+  border: 0;
+  color: black;
+  position: absolute;
+  top: -60px;
+  left: 5px;
+  transition: .3s;
+  cursor: pointer;
+  outline: 0;
+}
 
-  .containe .plus:hover {
-    color: #494949;
-  }
+.containe .plus:hover {
+  color: #494949;
+}
 
-  .containe .minus {
-    background: none;
-    border: 0;
-    color: black;
-    position: absolute;
-    top: 110px;
-    left: 5px;
-    transition: .3s;
-    cursor: pointer;
-    outline: 0;
-  }
+.containe .minus {
+  background: none;
+  border: 0;
+  color: black;
+  position: absolute;
+  top: 110px;
+  left: 5px;
+  transition: .3s;
+  cursor: pointer;
+  outline: 0;
+}
 
-  .containe .minus:hover {
-    color: #494949;
-  }
+.containe .minus:hover {
+  color: #494949;
+}
 
-  .containe .hours,
-  .containe .minutes,
-  .containe .seconds {
-    position: relative;
-    margin-right: 60px;
-    display: inline-block;
-  }
+.containe .hours,
+.containe .minutes,
+.containe .seconds {
+  position: relative;
+  margin-right: 60px;
+  display: inline-block;
+}
 
-  .containe .seconds {
-    margin-right: 0;
-  }
+.containe .seconds {
+  margin-right: 0;
+}
 
-  .containe .hours:after,
-  .containe .minutes:after {
-    content: ":";
-    font-size: 40px;
-    color: black;
-    position: absolute;
-    right: -40px;;
-    top: 5px;
-  }
+.containe .hours:after,
+.containe .minutes:after {
+  content: ":";
+  font-size: 40px;
+  color: black;
+  position: absolute;
+  right: -40px;
+  ;
+  top: 5px;
+}
 
-  .containe .set {
-    background: none;
-    padding: 10px 40px;
-    color: black;
-    margin: 100px auto;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: .3s;
-    display: block;
-  }
+.containe .set {
+  background: none;
+  padding: 10px 40px;
+  color: black;
+  margin: 100px auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: .3s;
+  display: block;
+}
 
-  .containe .set:hover {
-    background: rgba(255, 255, 255, 0.5);
-  }
+.containe .set:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
 
-  .containe .controls {
-    width: 100%;
-    margin: 70px auto;
-    display: none;
-  }
+.containe .controls {
+  width: 100%;
+  margin: 70px auto;
+  display: none;
+}
 
-  .containe .controls button {
-    background: none;
-    border: 0;
-    color: black;
-    cursor: pointer;
-    margin: 10px;
-    outline: 0;
-  }
+.containe .controls button {
+  background: none;
+  border: 0;
+  color: black;
+  cursor: pointer;
+  margin: 10px;
+  outline: 0;
+}

@@ -158,6 +158,7 @@ body {
 #progressbar li.active:before, #progressbar li.active:after {
   background: #FFAF23;
   color: white;
+  >>>>>>>e2cceb85b4ee18579768024ab9c51c311303c782
 }
 
 .login_text {

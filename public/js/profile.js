@@ -40,10 +40,13 @@ function projectClick(e) {
   if (detail.length == 0) {
     var string = `<div class="record-detail"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Durition: ${duration} </p><p>Health Rate: ${health} </p>`;
     $(this).append(string);
-
+    // $(containingProject).append($(date).text);
+    // $(containingProject).append("<text>Start Time: </text>");
+    // $(containingProject).append($(time).text);
+    // $(containingProject).append("<text>End Time: </text>");
   } else {
-    $(".record-detail").toggle(); //toggle
-
+    $(".record-detail").hide();
+    //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
   }
 
 }
