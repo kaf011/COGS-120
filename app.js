@@ -108,17 +108,16 @@ app.post('/signup_step2', (req, res) => {
   res.send(step2_data)
 });
 
-// app.get('/signup_step2', (req, res) =>{
-//   let obj = step2_data.step2[name]
-//   let { step2 } = res;
-//   imageSrc = mapImgSrc[step2[name]['imageId']]
-//   console.log(imageSrc)
-//   $('#user-avatar').attr('src', imageSrc)
-//   $('#eatBuddy').html(eatBuddy)
-// });
 
+app.get('/user', (req, res) => {
 
+  const puppies = step2_data.step2;
+  const keys = Object.keys(puppies)
+  const puppy = step2_data.step2[keys[keys.length - 1]];
+  console.log(puppy);
+  res.send(puppy);
 
+});
 
 app.get('/add', add.addRecord);
 
