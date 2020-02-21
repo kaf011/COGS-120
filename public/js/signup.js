@@ -2,7 +2,7 @@
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
-
+var imageId;
 
 
 
@@ -146,6 +146,7 @@ $(".submit").click(function() {
 $(".avatar-img").click(function(e) {
   $(".avatar-img").removeClass("avatar-img-selected");
   $(this).toggleClass("avatar-img-selected");
+  imageId = $(this).attr('id')
   // $(this).css({'border-radius': '50%', 'width': '6rem',
   //
   // 'border': 4px solid #494949,
