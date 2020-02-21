@@ -3,6 +3,8 @@ body {
   /* font-family: "Montserrat"; */
   /* background-size: cover; */
   background-image: url("/images/main.jpg");
+  background-repeat:no-repeat;
+  background-attachment: fixed;
   font-family: Apple SD Gothic Neo, sans-serif;
 }
 
@@ -80,7 +82,7 @@ i {
 }
 
 .record-btn {
-  margin-left: 0px;
+  margin-left: 10px;
   margin-bottom: 20px;
   width:300px;
   color: #494949 !important;
