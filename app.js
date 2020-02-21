@@ -104,6 +104,13 @@ app.post('/signup_step2', (req, res) => {
   // console.log(step1_data)
   res.send(step2_data)
 });
+app.get('/user',(req,res)=>{
+
+  const puppy= step2_data.step2['111'];
+  console.log(puppy);
+  res.send(puppy);
+});
+
 app.get('/add', add.addRecord);
 
 // Example route
