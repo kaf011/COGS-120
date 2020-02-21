@@ -89,9 +89,12 @@ body{
 .food-lock{
   pointer-events: none;
 }
-
+.food-btn-chosen:active {
+  border: #e2b058 solid 5px;
+}
 .food-btn-chosen {
   background-color: #ffffff;
+  pointer-events: none;
 }
 
 .avatar-img {
