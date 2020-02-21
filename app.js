@@ -105,7 +105,9 @@ app.post('/signup_step2', (req, res) => {
   res.send(step2_data)
 });
 app.get('/user',(req,res)=>{
-
+  //console.log(Object.keys(step2_data.step2));
+  var name = Object.keys(step2_data.step2);
+  console.log(name);
   const puppy= step2_data.step2['111'];
   console.log(puppy);
   res.send(puppy);
