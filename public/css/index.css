@@ -1,42 +1,53 @@
+
+body{
+  background-image:url("/images/login.jpg");
+}
+.content{
+  background: rgba(77, 77, 77, 0.3);
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 10px;
+  padding:30px;
+}
+
 #login_logo{
-  color: black;
+  color: white;
   text-align: center;
-  font-size: 45px;
+  font-size: 60px;
   margin:200px 0px 30px;
 }
 .username_login{
-  width: 60%;
+  width: 100%;
   padding: 8px 10px;
   margin: 6px 0;
   display:inline-block;
   border: 1px solid #ccc;
-  border-color: #494949;
-  box-sizing: border-box;
   border-radius: 20px;
 }
 .password_login{
-  width: 60%;
+  width: 100%;
   padding: 8px 10px;
   margin: 6px 0;
   display:inline-block;
   border: 1px solid #ccc;
-  border-color: #494949;
   box-sizing: border-box;
   border-radius: 20px;
 }
 .login_button{
-  width:60%;
+  width:100%;
   padding: 8px 10px;
   margin: 6px 0;
-  background:#ccc;
+  color:white;
+  background:#ffaf23;
   border-radius: 20px;
+  margin-bottom: 10px;
 }
 .login_button:hover{
   color:white;
   width:60%;
   padding: 8px 10px;
   margin: 6px 0;
-  background:#494949;
+  background:white;
   border-radius: 20px;
   transition: all 0.4s ease 0s;
 }

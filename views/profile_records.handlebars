@@ -22,24 +22,28 @@
 
 
 <body>
-  <div class="container" style="position:relative; top:20px;">
+  <div style="margin-bottom:20px">
+    <a href="profile">
+      <button type="button" class="btn back-btn">Back</button>
+    </a>
+
+  </div>
+
+  <div class="container" style="position:relative; top:50px;">
+
+    <h1 style="color:#ffffff"><img src="/images/calendar.png" width="8%" alt="" style="margin:13px;"/>Meal Records</h1>
+
+
 
     <div>
-      <a href="profile">
-        <button type="button" class="btn btn-dark btn-lg back-btn">Back</button>
-      </a>
-
-    </div>
-
-
-    <section>
     {{#each records}}
 
       <div class="record">
         <button type="button" class="btn btn-light btn-lg record-btn">
-          <td class="date">{{Date}} </td>
-          <td class="time"> {{Time}} </td>
-          <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
+          <a href="#" style="display: none" class="duration">{{Duration}}</a>
+          <a href="#" class="date"> {{Date}}</a>
+          <a href="#" class="time"> {{Time}} </a>
+          <a href="#" class="health"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></a>
         </button>
 	    </div>
 		{{/each}}
@@ -98,7 +102,7 @@
         </button>
       </div> -->
 
-    </section>
+    </div>
 
 
     <!-- <div class=" button_cont" align="center">
