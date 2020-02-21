@@ -25,7 +25,7 @@
     <div class="finish" align="center">
         <h1 style="margin-top:200px;">Meal Finished</h1>
     </p>
-        <img class="avatar-img" src="images/shiba-inu.png" alt="avatar">
+        <img id="user-avatar" class="avatar-img" src="images/shiba-inu.png" alt="avatar">
     </p>
     <div>
         <h3>Health Rate</h3>
@@ -44,5 +44,29 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
 </body>
+<script>
+  $(document).ready(function() {
+    let mapImgSrc = {
+          'img1': 'images/shiba-inu.png',
+          'img2': 'images/cat.png',
+          'img3': 'images/bulldog.png',
+          'img4': 'images/koala.png'
+        }
+    $.ajax({
+      type:'GET',
+      url: '/user',
+      dataType:'json',
+      success:(data)=>{
+        console.log(data.eatBuddy);
+        imageSrc = mapImgSrc[data.imageId]
+        console.log(imageSrc)
+        $('#user-avatar').attr('src', imageSrc)
+        $('#eatBuddy').html(data.eatBuddy)
+      }
+    });
+
+
+})
+</script>
 
 </html>
