@@ -4,7 +4,8 @@
 			"id": 1,
 			"Date": "2020/2/05",
 			"Time": "18:00",
-			"Health": "fas fa-star-half-alt"
+			"Health": "fas fa-star-half-alt",
+			"Duration":"10min"
 		},
 		{
 			"id": 2,

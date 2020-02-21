@@ -28,11 +28,13 @@ function projectClick(e) {
 
 	  var record = $(this).closest(".record");
 		var id = record.attr('id');
-		var date = record.attr('Date');
+		var date = $(this).find(".date").html();
+		var duration = $(this).find(".duration").html();
+		console.log(duration);
 		var time = record.attr('Time');
 		var detail = $(this).find(".record-detail");
 		if (detail.length == 0){
-			var string = `<div class="record-detail"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Meal Ends: </p><p>Durition: </p><p>Health Rate: </p>`;
+			var string = `<div class="record-detail"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Meal Ends: </p><p>Durition: ${duration} </p><p>Health Rate: </p>`;
 			$(this).append(string);
 			// $(containingProject).append($(date).text);
 			// $(containingProject).append("<text>Start Time: </text>");
