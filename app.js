@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
+var bodyParser = require('body-parser')
 
 var index = require('./routes/index');
 var home = require('./routes/home');
@@ -20,12 +21,18 @@ var forget_your_password = require('./routes/forget_your_password');
 var finish = require('./routes/finish');
 var add = require('./routes/add');
 
+var step1_data = require("./step1.json");
+
 //var project = require('./routes/project');
 
 // Example route
 // var user = require('./routes/user');
 
 var app = express();
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -57,6 +64,21 @@ app.get('/step3', step3.viewProject);
 app.get('/signup', signup.viewProject);
 app.get('/forget_your_password', forget_your_password.viewProject);
 app.get('/finish', finish.viewProject);
+app.post('/signup_step1', (req, res) => {
+  // let { formData } = req.form;
+  let { username, pass, cpass, email, twitter } = req.body
+  let obj = {
+    'username': username,
+    'pass': pass,
+    'cpass': cpass,
+    'email': email,
+    'twitter': twitter
+  }
+
+  step1_data.step1[username] = obj
+  console.log(step1_data)
+  res.send(step1_data)
+});
 app.get('/add', add.addRecord);
 
 // Example route
