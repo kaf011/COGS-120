@@ -40,9 +40,10 @@
 
       <div class="record">
         <button type="button" class="btn btn-light btn-lg record-btn">
-          <td class="date">{{Date}} </td>
-          <td class="time"> {{Time}} </td>
-          <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></td>
+          <a href="#" style="display: none" class="duration">{{Duration}}</a>
+          <a href="#" class="date"> {{Date}}</a>
+          <a href="#" class="time"> {{Time}} </a>
+          <a href="#" class="health"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></a>
         </button>
 	    </div>
 		{{/each}}

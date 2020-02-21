@@ -1,7 +1,7 @@
 body {
   /* font-family: "Montserrat"; */
   background-image: url("/images/main.jpg");
-  background-size: cover;
+  /* background-size: cover; */
   background-position: bottom center;
   font-family: Apple SD Gothic Neo, sans-serif;
 }

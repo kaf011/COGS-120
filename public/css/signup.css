@@ -2,158 +2,179 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 /*basic reset*/
-* {margin: 0; padding: 0;}
+* {
+  margin: 0;
+  padding: 0;
+}
 
 html {
-	height: 100%;
-	/*Image only BG fallback*/
-
-	/*background = gradient + image pattern combo*/
-	background-image:url("/images/signup.jpg");
+  height: 100%;
+  /*Image only BG fallback*/
+  /*background = gradient + image pattern combo*/
+  background-image: url("/images/signup.jpg");
 }
 
 body {
-	font-family: montserrat, arial, verdana;
+  font-family: montserrat, arial, verdana;
+  background-position: bottom center;
 }
+
 /*form styles*/
 #msform {
-	width: 400px;
-	margin: 50px auto;
-	text-align: center;
-	position: relative;
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
 }
-#msform fieldset {
-	background: white;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 10%;
 
-	/*stacking fieldsets above each other*/
-	position: relative;
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
+  /*stacking fieldsets above each other*/
+  position: relative;
 }
+
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
-	display: none;
-}
-/*inputs*/
-#msform input, #msform textarea {
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 30px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	font-family: montserrat;
-	color: #2C3E50;
-	font-size: 13px;
-}
-/*buttons*/
-#msform .action-button {
-	width: 40%;
-	background: #FFAF23;
-	font-weight: bold;
-	color: white;
-	border: 0 none;
-	border-radius: 20px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
-}
-#msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
-}
-/*headings*/
-.fs-title {
-	font-weight: bold;
-	font-size: 15px;
-	text-transform: uppercase;
-	color: #2C3E50;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-.fs-subtitle {
-	font-weight: normal;
-	text-transform: uppercase;
-	font-size: 14px;
-	color: #666;
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
-.fs-name {
-	font-weight: normal;
-	font-size: 14px;
-	color: #666;
-	margin-top: 0px;
-	margin-bottom: 15px;
-}
-/*progressbar*/
-#progressbar {
-	margin-bottom: 60px;
-  margin-top: 60px;
-	overflow: hidden;
-	/*CSS counters to number the steps*/
-	counter-reset: step;
-}
-#progressbar li {
-	list-style-type: none;
-	color: black;
-	/* text-transform: uppercase; */
-	font-size: 9px;
-	width: 33.33%;
-	float: left;
-	position: relative;
-}
-#progressbar li:before {
-	content: counter(step);
-	counter-increment: step;
-	width: 30px;
-	line-height: 30px;
-	display: block;
-	font-size: 10px;
-	color: #333;
-	background: #D9D9D9;
-	border-radius: 30px;
-	border-color:black;
-	margin: 0 auto 5px auto;
-}
-/*progressbar connectors*/
-#progressbar li:after {
-	content: '';
-	width: 100%;
-	height: 2px;
-	background: #D9D9D9;
-	position: absolute;
-	left: -50%;
-	top: 15px;
-	z-index: -1; /*put it behind the numbers*/
-}
-#progressbar li:first-child:after {
-	/*connector not needed before the first step*/
-	content: none;
-}
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-	background: #FFAF23;
-	color: white;
+  display: none;
 }
 
-.login_text{
-	font-size: 10px;
-	color: #2C3E50;
-	margin-bottom: 0px;
+/*inputs*/
+#msform input, #msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
 }
-.avatar-img{
+
+/*buttons*/
+#msform .action-button {
+  width: 40%;
+  background: #FFAF23;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+/*headings*/
+.fs-title {
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fs-subtitle {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.fs-name {
+  font-weight: normal;
+  font-size: 14px;
+  color: #666;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+/*progressbar*/
+#progressbar {
+  margin-bottom: 60px;
+  margin-top: 60px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+
+#progressbar li {
+  list-style-type: none;
+  color: black;
+  /* text-transform: uppercase; */
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  line-height: 30px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: #D9D9D9;
+  border-radius: 30px;
+  border-color: black;
+  margin: 0 auto 5px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #D9D9D9;
+  position: absolute;
+  left: -50%;
+  top: 15px;
+  z-index: -1;
+  /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+  background: #FFAF23;
+  color: white;
+  >>>>>>>e2cceb85b4ee18579768024ab9c51c311303c782
+}
+
+.login_text {
+  font-size: 10px;
+  color: #2C3E50;
+  margin-bottom: 0px;
+}
+
+.avatar-img {
   border-radius: 50%;
   width: 6rem;
   /*float: left; /* clear: left; meaning empty-float, prevent it from wrapping img to the left */
   border: 1px solid #494949;
-	margin:10px;
+  margin: 10px;
 }
+
 /* .avatar-img:hover{
   border-radius: 50%;
   width: 6rem;
@@ -161,21 +182,23 @@ body {
 	margin:10px;
 	padding:2px;
 } */
-.avatar-img-selected{
+.avatar-img-selected {
   border-radius: 50%;
   width: 6rem;
   /*float: left; /* clear: left; meaning empty-float, prevent it from wrapping img to the left */
   border: 4px solid #494949;
-	margin:10px;
-	padding:2px;
+  margin: 10px;
+  padding: 2px;
 }
-.avatar-confirm_img{
+
+.avatar-confirm_img {
   border-radius: 50%;
   width: 6rem;
   /*float: left; /* clear: left; meaning empty-float, prevent it from wrapping img to the left */
   border: 1px solid #494949;
-	margin:10px;
+  margin: 10px;
 }
-.name{
-	width:40%;
+
+.name {
+  width: 40%;
 }
