@@ -45,7 +45,7 @@ function projectClick(e) {
     // $(containingProject).append($(time).text);
     // $(containingProject).append("<text>End Time: </text>");
   } else {
-    $(".record-detail").hide();
+    $(this).find(".record-detail").toggle();
     //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
   }
 
