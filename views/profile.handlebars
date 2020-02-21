@@ -32,13 +32,13 @@
     <div class="info">
       <div class="col-lg-6">
         <button class="avatar-btn" type="button" name="button">
-          <img class="avatar-img" src="/images/shiba-inu.png" alt="avatar">
+          <img id='user-avatar' class="avatar-img" src="{{imageSrc}}" alt="avatar">
         </button>
 
       </div>
 
       <div class="col-lg-6">
-        <h1>DuoDuo</h1>
+        <h1 id="eatBuddy">{{eatBuddy}}</h1>
         <h3>Health Rate</h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
 
       </div>
@@ -79,8 +79,37 @@
 </body>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    //var eatBuddy = '';
+    var imageSrc = '';
+    //var imageId='';
+    let mapImgSrc = {
+          'img1': 'images/shiba-inu.png',
+          'img2': 'images/cat.png',
+          'img3': 'images/bulldog.png',
+          'img4': 'images/koala.png'
+        }
+    // $.get("/signup_step2", function(data){
+    //   let {
+    //     imageId,
+    //     eatBuddy,
+    //     name
+    //   } = req.body
+    //   console.log(data)
+		// })
+    $.getJSON('/step2.json', {name:'step2'}, function (data, textStatus, jqXHR){
+      //$('p').append(data.firstName);
+       //let { step2 } = res;
+       console.log(data);
+       imageSrc = data[1].imageId;
+       console.log(imageSrc);
+       $('#user-avatar').attr('src', imageSrc);
+       $('#eatBuddy').html(eatBuddy);
+     });
 
-
-
-
+    //$('#user-avatar').attr('src', imageSrc)
+    //$('#eatBuddy').html(eatBuddy)
+})
+</script>
 </html>

@@ -23,6 +23,8 @@ var add = require('./routes/add');
 var step1_data = require("./step1.json");
 var step2_data = require("./step2.json");
 
+// var signup_step2 = require("./signup_step2");
+
 //var project = require('./routes/project');
 
 // Example route
@@ -64,6 +66,7 @@ app.get('/step3', step3.viewProject);
 app.get('/signup', signup.viewProject);
 app.get('/forget_your_password', forget_your_password.viewProject);
 app.get('/finish', finish.viewProject);
+
 app.post('/signup_step1', (req, res) => {
   // let { formData } = req.form;
   let {
@@ -104,6 +107,19 @@ app.post('/signup_step2', (req, res) => {
   // console.log(step1_data)
   res.send(step2_data)
 });
+
+// app.get('/signup_step2', (req, res) =>{
+//   let obj = step2_data.step2[name]
+//   let { step2 } = res;
+//   imageSrc = mapImgSrc[step2[name]['imageId']]
+//   console.log(imageSrc)
+//   $('#user-avatar').attr('src', imageSrc)
+//   $('#eatBuddy').html(eatBuddy)
+// });
+
+
+
+
 app.get('/add', add.addRecord);
 
 // Example route
