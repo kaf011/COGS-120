@@ -1,3 +1,5 @@
+var data = require('../data.json');
+
 exports.viewProject = function(req, res) {
 
   //var name = req.params.name;

@@ -7,6 +7,9 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
+
+  {{> facebook}}
+  <script src="/js/facebook.js"></script>
 </head>
 
 <body>
@@ -16,6 +19,10 @@
       <input class="username_login" id="username" type="text" placeholder="Username" required>
       <input class="password_login" id="password" type="text" placeholder="Password" required>
       <button class="btn login_button" onclick="window.location.href='home'">Login</button>
+    </div>
+    <div class="fb">
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+      </fb:login-button>
     </div>
     <div style="text-align:center;">
       <a href="forget_your_password" style="color:white; text-decoration:underline;"> Forget Your Password? </a>
