@@ -1,6 +1,7 @@
 /* start main style */
 body{
   background-image:url("/images/timer.jpg");
+  background-attachment: fixed;
   font-family: Apple SD Gothic Neo, sans-serif;
 }
 #header2{
