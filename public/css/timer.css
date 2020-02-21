@@ -5,7 +5,9 @@ body{
 #header2{
     display: none;
   }
-
+.img{
+  width: 10rem;
+}
   /* end main style */
 
   /* start container */
