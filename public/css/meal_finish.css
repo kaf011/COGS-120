@@ -1,10 +1,8 @@
-html {
-  background-size: cover;
+body {
+  /* background-size: cover; */
   background-position: bottom center;
-}
-body{
   font-family: Apple SD Gothic Neo, sans-serif;
-  color: #ffffff;
+  color: black;
 }
 
 .step {
@@ -29,34 +27,29 @@ body{
 
 .back-btn {
   position: absolute;
-  width:100px;
   left: 20px;
-  font-size: 15px;
-  color: #ffc764;
-  font-weight: bold;
-  padding: 12px;
-  box-shadow: 2px 5px 10px #e2b058;
-  background-color: #ffffff;
+  font-size: 10px;
 }
 
 .next-btn {
   position: absolute;
-  width:250px;
-  right: 65px;
-  font-size: 15px;
-  color: white;
-  font-weight: bold;
-  padding: 11px;
-  box-shadow: 2px 5px 10px #e2b058;
-  background-color: #ffc764;
-  letter-spacing: 2px;
+  right: 20px;
+  font-size: 10px;
 }
 
 .btn {
-  height: 42px;
-  text-transform: uppercase;
+  position: absolute;
+  width:250px;
+  right: 65px;
+  font-size: 15px;
+  color:#ffc764;
+  font-weight: bold;
+  padding: 12px;
+  box-shadow: 2px 5px 10px #e2b058;
+  background-color: white;
   border-radius: 24px;
-  cursor: pointer;
+  margin-top:236px;
+  letter-spacing: 2px;
 }
 
 .photo-btn {
@@ -78,7 +71,7 @@ body{
   background-color: #b5b5b5;
   border-radius: 24px;
   padding: 15px;
-  margin:10px;
+  margin: 10px;
   width: 80px;
   height: 80px;
   box-shadow: 2px 5px 10px #e2b058;
@@ -88,6 +81,9 @@ body{
   background-color: #ffffff;
 }
 
+.h1{
+  margin-top:300px;
+}
 .avatar-img {
   width: 5rem;
   /* float: left; */
