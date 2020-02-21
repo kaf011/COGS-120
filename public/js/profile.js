@@ -52,27 +52,27 @@ function projectClick(e) {
 }
 
 // TODO: function to use later, new files required.
-function addProjectDetails(e) {
-  // Prevent following the link
-  e.preventDefault();
-
-  // Get the div ID, e.g., "project3"
-  var projectID = $(this).closest('.record').attr('id');
-  // get rid of 'project' from the front of the id 'project3'
-  var idNumber = projectID.substr('record'.length);
-  $.get("/record/" + idNumber, callBackFn);
-
-  console.log("User clicked on record " + idNumber);
-
-  console.log("URL: " + "/record/" + idNumber);
-}
-
-function callBackFn(result) {
-  console.log(result);
-  var projectHTML = "";
-  console.log(projectHTML);
-  $("#record" + result["id"] + " .details").html(projectHTML);
-}
+// function addProjectDetails(e) {
+//   // Prevent following the link
+//   e.preventDefault();
+//
+//   // Get the div ID, e.g., "project3"
+//   var projectID = $(this).closest('.record').attr('id');
+//   // get rid of 'project' from the front of the id 'project3'
+//   var idNumber = projectID.substr('record'.length);
+//   $.get("/record/" + idNumber, callBackFn);
+//
+//   console.log("User clicked on record " + idNumber);
+//
+//   console.log("URL: " + "/record/" + idNumber);
+// }
+//
+// function callBackFn(result) {
+//   console.log(result);
+//   var projectHTML = "";
+//   console.log(projectHTML);
+//   $("#record" + result["id"] + " .details").html(projectHTML);
+// }
 
 // // index.handlebars
 // {{#each projects}}
