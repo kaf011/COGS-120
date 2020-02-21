@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -22,6 +21,7 @@ var finish = require('./routes/finish');
 var add = require('./routes/add');
 
 var step1_data = require("./step1.json");
+var step2_data = require("./step2.json");
 
 //var project = require('./routes/project');
 
@@ -66,7 +66,13 @@ app.get('/forget_your_password', forget_your_password.viewProject);
 app.get('/finish', finish.viewProject);
 app.post('/signup_step1', (req, res) => {
   // let { formData } = req.form;
-  let { username, pass, cpass, email, twitter } = req.body
+  let {
+    username,
+    pass,
+    cpass,
+    email,
+    twitter
+  } = req.body
   let obj = {
     'username': username,
     'pass': pass,
@@ -79,11 +85,30 @@ app.post('/signup_step1', (req, res) => {
   console.log(step1_data)
   res.send(step1_data)
 });
+app.post('/signup_step2', (req, res) => {
+  // let { formData } = req.form;
+  let {
+    imageId,
+    eatBuddy,
+    name
+  } = req.body
+  let obj = {
+    'imageId': imageId,
+    'eatBuddy': eatBuddy
+  }
+
+  step2_data.step2[name] = obj
+  console.log(step2_data)
+  //
+  // step1_data.step1[username] = obj
+  // console.log(step1_data)
+  res.send(step2_data)
+});
 app.get('/add', add.addRecord);
 
 // Example route
 // app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
