@@ -90,7 +90,7 @@ body {
 .containe .hours:after,
 .containe .minutes:after {
   content: ":";
-  font-size: 40px;
+  font-size: 60px;
   color: black;
   position: absolute;
   right: -40px;
