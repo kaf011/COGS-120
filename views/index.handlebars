@@ -20,14 +20,14 @@
       <input class="password_login" id="password" type="text" placeholder="Password" required>
       <button class="btn login_button" onclick="window.location.href='home'">Login</button>
     </div>
-    <div class="fb">
-      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-      </fb:login-button>
-    </div>
+
     <div style="text-align:center;">
       <a href="forget_your_password" style="color:white; text-decoration:underline;"> Forget Your Password? </a>
       <p style="margin:20px 0px 0px; color:white;"> Or </p>
-
+    <div class="fb" style="margin-left:15px; margin-bottom:10px; margin-top:10px; margin-right:15px;">
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+    </div>
       <a style="color:white;font-size:15px;"> Don't have an Account? </a>
       <a href="signup" style="font-size:15px;"> Sign up now! </a>
     </div>
