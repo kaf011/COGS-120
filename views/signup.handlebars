@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/signup.css">
   <script src="/js/signup.js"></script>
 
+
 </head>
 <body>
   <!-- multistep form -->
@@ -19,11 +20,11 @@
       <li>Confirm<br></li>
     </ul>
     <!-- fieldsets -->
-    <fieldset>
+    <fieldset id="field1">
       <h2 class="fs-title" style="padding: 20px ">Create your account</h2>
     <!--<h3 class="fs-subtitle">This is step 1</h3>-->
-      <input type="text" name="username" placeholder="Username" />
-      <input type="password" name="pass" placeholder="Password" />
+      <input type="text" class="name" name="username" placeholder="Username" />
+      <input type="password" class="pw" name="pass" placeholder="Password" />
       <input type="password" name="cpass" placeholder="Confirm Password" />
       <input type="text" name="email" placeholder="Email" />
       <input id="next" type="button" name="next" class="next action-button" value="Next" />
@@ -33,10 +34,11 @@
     </fieldset>
     <fieldset>
       <h2 class="fs-title">Choose Your Eat Buddy</h2>
-      <img class="avatar-img" src="images/dog.jpeg" alt="avatar">
-      <img class="avatar-img" src="images/dog.jpeg" alt="avatar">
-      <img class="avatar-img" src="images/dog.jpeg" alt="avatar">
-      <img class="avatar-img" src="images/dog.jpeg" alt="avatar"></button>
+      <a class="avatar-btn avatar1-btn"><img class="avatar-img" src="images/shiba-inu.png" alt="avatar" align="center"></a>
+      <a class="avatar-btn avatar2-btn"><img class="avatar-img" src="images/cat.png" alt="avatar" align="center"></a>
+      <a class="avatar-btn avatar3-btn"><img class="avatar-img" src="images/bulldog.png" alt="avatar" align="center"></a>
+      <a class="avatar-btn avatar4-btn"><img class="avatar-img" src="images/koala.png" alt="avatar" align="center"></a>
+
       <h2 class="fs-subtitle">Name your Eat Buddy</h2>
       <input type="text" name="twitter" placeholder="Name" />
       <input type="button" name="previous" class="previous action-button" value="Back" />
@@ -60,10 +62,10 @@
       }
     function sendStep1Data() {
       console.log(1)
-      
+
     }
     </script>
-      
+
     <script>
       $(document).ready(function () {
         var eatBuddy = '';
@@ -72,7 +74,7 @@
           var form = document.querySelector('form');
           var formData = new FormData(form);
           var reqData = {}
-          for (var [key, value] of formData.entries()) { 
+          for (var [key, value] of formData.entries()) {
             reqData[key] = value;
             if (key == 'username') {
               name = value
