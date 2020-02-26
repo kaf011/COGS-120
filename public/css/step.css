@@ -95,11 +95,12 @@ body {
 }
 .food-btn-chosen {
   background-color: #ffffff;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .food-btn-chosen-chosen {
-  border: #e2b058 solid 5px;
+  border: none;
+  background-color: #ffaf23;
 }
 
 .avatar-img {
