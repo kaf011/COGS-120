@@ -22,6 +22,7 @@ var add = require('./routes/add');
 
 var step1_data = require("./step1.json");
 var step2_data = require("./step2.json");
+var rateData = require("./rate.json");
 
 // var signup_step2 = require("./signup_step2");
 
@@ -108,7 +109,20 @@ app.post('/signup_step2', (req, res) => {
   res.send(step2_data)
 });
 
+app.post('/rate',(req,res)=>{
+  let{
+    duration,
+    currentTime
+  }=req.body
+  let obj = {
+    'duration':duration,
+    'currentTime':currentTime
+  }
+  rateData.rate.push(obj);
+  console.log(obj);
+  res.send(rateData);
 
+});
 app.get('/user', (req, res) => {
 
   const puppies = step2_data.step2;

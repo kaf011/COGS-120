@@ -20,6 +20,7 @@ const pause = document.getElementById('pause');
 const minutesDiv = document.getElementById('minutes').children[2]
 const secondsDiv = document.getElementById('seconds').children[2];
 
+
 // plus the time
 plus.forEach((elem) => {
 
@@ -85,7 +86,9 @@ set.onclick = () => {
     let sec = min + window.parseInt(secondsDiv.textContent);
 
     let saveSec = sec;
-
+    var duration = '';
+    var date = new Date();
+    var currentTime='';
     if (sec === 0) {
 
         alert('you should set a value');
@@ -128,7 +131,23 @@ set.onclick = () => {
 
         sec--;
 
-        if(minutes==0&&seconds == 0) window.location.replace("finish");
+        if(minutes==0&&seconds == 0) {
+            duration = saveSec;
+            currentTime = date.getHours();
+        console.log(duration);
+        $.ajax({
+            type: "POST",
+            url: '/rate',
+            data: {
+                duration,
+                currentTime
+            },
+            success: function (res) {
+                console.log("success");
+            }
+        });
+        window.location.replace("finish");
+        }
 
     }
 
@@ -136,12 +155,26 @@ set.onclick = () => {
 
     // paused the count down timer
     pause.onclick = () => {
+        duration = saveSec-sec;
+        currentTime = date.getHours();
+        console.log(duration);
+        $.ajax({
+            type: "POST",
+            url: '/rate',
+            data: {
+                duration,
+                currentTime
+            },
+            success: function (res) {
+                console.log(res);
+            }
+        });
         location.href = "finish";
-        play.style.display = 'inline-block';
-        pause.style.display = 'none';
-
+        //play.style.display = 'inline-block';
+        //pause.style.display = 'none';
         clearInterval(setIn);
-
     };
+    
+    
 
 };
