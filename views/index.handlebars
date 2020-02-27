@@ -98,13 +98,18 @@
               $('#alert_pw').css("opacity","100");
               $('#alert_pw').css("height","18px");
             } else{
+              // success
+              //console.log(data[name]);
+              let obj = { "name" : name};
               $.ajax({
                 type: "POST",
                 url: '/login_success',
-                data: name,
+                dataType: "text",
+                data: obj,
+
                 success: function (res) {
                   // let { step1 } = res;
-                  console.log(name);
+                  console.log(data[name]);
                   // eatBuddy = step1[name]['username']
                   // $('#eatBuddy').html(eatBuddy)
                 }

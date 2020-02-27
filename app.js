@@ -69,7 +69,9 @@ app.get('/forget_your_password', forget_your_password.viewProject);
 app.get('/finish', finish.viewProject);
 
 app.post('/login_success', (req, res) => {
-  userName = req.body;
+  userName = req.body["name"];
+
+  console.log(userName);
 })
 
 app.post('/signup_step1', (req, res) => {
