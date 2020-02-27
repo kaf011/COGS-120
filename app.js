@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-
+var userName = '';
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -20,7 +20,7 @@ var forget_your_password = require('./routes/forget_your_password');
 var finish = require('./routes/finish');
 var add = require('./routes/add');
 
-var step1_data = require("./step1.json");
+var user_data = require("./users.json");
 var step2_data = require("./step2.json");
 var rateData = require("./rate.json");
 
@@ -78,20 +78,18 @@ app.post('/signup_step1', (req, res) => {
     username,
     pass,
     cpass,
-    email,
-    twitter
+    email
   } = req.body
   let obj = {
     'username': username,
     'pass': pass,
     'cpass': cpass,
     'email': email,
-    'twitter': twitter
   }
 
-  step1_data.step1[username] = obj
-  console.log(step1_data)
-  res.send(step1_data)
+  user_data.users[username] = obj
+  console.log(user_data)
+  res.send(user_data)
 });
 
 
@@ -103,36 +101,40 @@ app.post('/signup_step2', (req, res) => {
     name
   } = req.body
 
-  let userInfo = step1_data.step1;
+  let userInfo = user_data.users;
 
   let obj = {
     'imageId': imageId,
     'eatBuddy': eatBuddy
   }
 
-  step2_data.step2[name] = obj; // indexed by username
+  //step2_data.step2[name] = obj; // indexed by username
 
-  step1_data.step1[name]['imageId'] = imageId;
-  step1_data.step1[name]['eatBuddy'] = eatBuddy;
+  user_data.users[name]['imageId'] = imageId;
+  user_data.users[name]['eatBuddy'] = eatBuddy;
 
-  console.log(step1_data)
+  //console.log(step1_data)
 
 
   // step1_data.step1[username] = obj
   // console.log(step1_data)
-  res.send(step2_data)
+  res.send(user_data)
 });
 
 app.post('/rate', (req, res) => {
   let {
+    newDate,
+    newTime,
     duration,
-    currentTime
+    healthrate
   } = req.body
   let obj = {
+    'date': newDate,
+    'time': newTime,
     'duration': duration,
-    'currentTime': currentTime
+    'rate': healthrate
   }
-  rateData.rate.push(obj);
+  user_data.users[name].records.push(obj);
   console.log(obj);
   res.send(rateData);
 

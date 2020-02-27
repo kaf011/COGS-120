@@ -1,6 +1,6 @@
 const header = document.getElementById('header');
 const header2 = document.getElementById('header2');
-const additional = document.getElementById('additional');
+//const additional = document.getElementById('additional');
 // get plus and minus buttons
 const plus = document.querySelectorAll('.plus');
 const minus = document.querySelectorAll('.minus');
@@ -21,7 +21,7 @@ const pause = document.getElementById('pause');
 const minutesDiv = document.getElementById('minutes').children[2]
 const secondsDiv = document.getElementById('seconds').children[2];
 
-additional.style.display = 'none';
+//additional.style.display = 'none';
 // plus the time
 plus.forEach((elem) => {
 
@@ -89,7 +89,20 @@ set.onclick = () => {
     let saveSec = sec;
     var duration = '';
     var date = new Date();
-    var currentTime='';
+    var currentTime = date.getHours();
+    var newTime;
+    var newDate = (date.getMonth() + 1) + "/" + date.getDate();
+    if(currentTime>12){
+        newTime = date.getHours()-12 + ":" + date.getMinutes()+" PM";
+    }
+    else{
+        newTime = date.getHours() + ":" + date.getMinutes()+" AM";
+    }
+    var healthrate = 1;
+    if(currentTime>=7&&currentTime<=9){healthrate++;}
+    if(currentTime>=11&&currentTime<=13){healthrate++;}
+    if(currentTime>=17&&currentTime<=19){healthrate++;}
+
     if (sec === 0) {
 
         alert('you should set a value');
@@ -99,7 +112,7 @@ set.onclick = () => {
         set.style.display = 'none';
         header.style.display = 'none';
         header1.style.display = 'none';
-        additional.style.display = 'none';
+        //additional.style.display = 'none';
         header2.style.display = 'block';
         controls.style.display = 'block';
 
@@ -116,24 +129,23 @@ set.onclick = () => {
 
     // countdown function
     function countdown() {
-        if(sec<0){
-            header2.style.display = 'none';
-            additional.style.display = 'block';
-        }
+        // if(sec<0){
+        //     header2.style.display = 'none';
+        //     //additional.style.display = 'block';
+        // }
         let minutes = Math.floor(sec / 60);
         //let hours = Math.floor(minutes / 60);
         let seconds = sec % 60;
-        if (sec<0){minutes = Math.floor(-1*sec / 60);seconds = -1*sec%60} ;
-        
-        
+        // if (sec<0){minutes = Math.floor(-1*sec / 60);seconds = -1*sec%60} ;
+           
 
         minutes %= 60;
 
         //if (hours <= 9) hours = '0' + hours;
-        if (minutes <= 9&&sec>0) minutes = '0' + minutes;
-        if (seconds <= 9&&sec>0) seconds = '0' + seconds;
-        if (sec <= 0&&minutes <= 9) minutes = '0' + minutes;
-        if (sec <= 0&&seconds <= 9) seconds = '0' + seconds;
+        if (minutes <= 9) minutes = '0' + minutes;
+        if (seconds <= 9) seconds = '0' + seconds;
+        // if (sec <= 0&&minutes <= 9) minutes = '0' + minutes;
+        // if (sec <= 0&&seconds <= 9) seconds = '0' + seconds;
 
         //hoursDiv.textContent = hours;
         minutesDiv.textContent = minutes;
@@ -141,23 +153,28 @@ set.onclick = () => {
 
         sec--;
 
-        // if(minutes==0&&seconds == 0) {
-        //     duration = saveSec;
-        //     currentTime = date.getHours();
-        // console.log(duration);
-        // $.ajax({
-        //     type: "POST",
-        //     url: '/rate',
-        //     data: {
-        //         duration,
-        //         currentTime
-        //     },
-        //     success: function (res) {
-        //         console.log("success");
-        //     }
-        // });
-        // //window.location.replace("finish");
-        // }
+        if(minutes==0&&seconds == 0) {
+            duration = saveSec;
+            if(duration>=900&&duration<=1500){
+                healthrate++;
+            }
+        
+        //console.log(duration);
+        $.ajax({
+            type: "POST",
+            url: '/rate',
+            data: {
+                newDate,
+                newTime,
+                duration,
+                healthrate
+            },
+            success: function (res) {
+                console.log(res);
+            }
+        });
+        window.location.replace("finish");
+        }
 
     }
 
@@ -165,15 +182,24 @@ set.onclick = () => {
 
     // paused the count down timer
     pause.onclick = () => {
-        duration = saveSec-sec;
-        currentTime = date.getHours();
+        // if(sec<0){
+        //     duration = sec*-1;
+        // }else{
+            duration = saveSec-sec;
+        // };
+        if(duration>=900&&duration<=1500){
+            healthrate++;
+        }
+        if(currentTime)
         console.log(duration);
         $.ajax({
             type: "POST",
             url: '/rate',
             data: {
+                newDate,
+                newTime,
                 duration,
-                currentTime
+                healthrate
             },
             success: function (res) {
                 console.log(res);

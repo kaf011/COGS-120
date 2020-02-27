@@ -1,0 +1,48 @@
+{
+  "step1": {
+    "default": {
+      "username": "default",
+      "pass": "0000",
+      "cpass": "0000",
+      "email": "default@default.com",
+      "imageId": "",
+      "eatBuddy": "",
+      "records": [{
+        "id": 1,
+        "Date": "2020/2/05",
+        "Time": "18:00",
+        "Health": "fas fa-star-half-alt",
+        "Duration": "20min"
+      },
+      {
+        "id": 2,
+        "Date": "2020/2/05",
+        "Time": "14:00",
+        "Health": "",
+        "Duration": "16min"
+      },
+      {
+        "id": 3,
+        "Date": "2020/2/04",
+        "Time": "19:22",
+        "Health": "fas fa-star-half-alt",
+        "Duration": "22min"
+      },
+      {
+        "id": 4,
+        "Date": "2020/2/04",
+        "Time": "12:00",
+        "Health": "far fa-star",
+        "Duration": "30min"
+      },
+      {
+        "id": 5,
+        "Date": "2020/2/04",
+        "Time": "09:18",
+        "Health": "",
+        "Duration": "26min"
+      }
+    ]
+    }
+  }
+}
