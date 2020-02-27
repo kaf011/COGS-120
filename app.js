@@ -121,12 +121,16 @@ app.post('/signup_step2', (req, res) => {
 
 app.post('/rate', (req, res) => {
   let {
+    newDate,
+    newTime,
     duration,
-    currentTime
+    healthrate
   } = req.body
   let obj = {
+    'date':newDate,
+    'time':newTime,
     'duration': duration,
-    'currentTime': currentTime
+    'rate':healthrate
   }
   rateData.rate.push(obj);
   console.log(obj);
