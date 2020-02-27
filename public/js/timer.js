@@ -1,5 +1,6 @@
 const header = document.getElementById('header');
-const header2 = document.getElementById('header2')
+const header2 = document.getElementById('header2');
+const additional = document.getElementById('additional');
 // get plus and minus buttons
 const plus = document.querySelectorAll('.plus');
 const minus = document.querySelectorAll('.minus');
@@ -20,7 +21,7 @@ const pause = document.getElementById('pause');
 const minutesDiv = document.getElementById('minutes').children[2]
 const secondsDiv = document.getElementById('seconds').children[2];
 
-
+additional.style.display = 'none';
 // plus the time
 plus.forEach((elem) => {
 
@@ -98,6 +99,7 @@ set.onclick = () => {
         set.style.display = 'none';
         header.style.display = 'none';
         header1.style.display = 'none';
+        additional.style.display = 'none';
         header2.style.display = 'block';
         controls.style.display = 'block';
 
@@ -114,16 +116,24 @@ set.onclick = () => {
 
     // countdown function
     function countdown() {
-
+        if(sec<0){
+            header2.style.display = 'none';
+            additional.style.display = 'block';
+        }
         let minutes = Math.floor(sec / 60);
         //let hours = Math.floor(minutes / 60);
         let seconds = sec % 60;
+        if (sec<0){minutes = Math.floor(-1*sec / 60);seconds = -1*sec%60} ;
+        
+        
 
         minutes %= 60;
 
         //if (hours <= 9) hours = '0' + hours;
-        if (minutes <= 9) minutes = '0' + minutes;
-        if (seconds <= 9) seconds = '0' + seconds;
+        if (minutes <= 9&&sec>0) minutes = '0' + minutes;
+        if (seconds <= 9&&sec>0) seconds = '0' + seconds;
+        if (sec <= 0&&minutes <= 9) minutes = '0' + minutes;
+        if (sec <= 0&&seconds <= 9) seconds = '0' + seconds;
 
         //hoursDiv.textContent = hours;
         minutesDiv.textContent = minutes;
@@ -131,23 +141,23 @@ set.onclick = () => {
 
         sec--;
 
-        if(minutes==0&&seconds == 0) {
-            duration = saveSec;
-            currentTime = date.getHours();
-        console.log(duration);
-        $.ajax({
-            type: "POST",
-            url: '/rate',
-            data: {
-                duration,
-                currentTime
-            },
-            success: function (res) {
-                console.log("success");
-            }
-        });
-        window.location.replace("finish");
-        }
+        // if(minutes==0&&seconds == 0) {
+        //     duration = saveSec;
+        //     currentTime = date.getHours();
+        // console.log(duration);
+        // $.ajax({
+        //     type: "POST",
+        //     url: '/rate',
+        //     data: {
+        //         duration,
+        //         currentTime
+        //     },
+        //     success: function (res) {
+        //         console.log("success");
+        //     }
+        // });
+        // //window.location.replace("finish");
+        // }
 
     }
 
