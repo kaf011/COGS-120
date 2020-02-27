@@ -8,6 +8,8 @@
   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
 
+  <!-- <script src="/js/login.js"></script> -->
+
   {{> facebook}}
   <script src="/js/facebook.js"></script>
 </head>
@@ -15,11 +17,14 @@
 <body>
   <h1 id="login_logo">EatBuddy</h1>
   <div class="content">
-    <div style="text-align:center;">
-      <input class="username_login" id="username" type="text" placeholder="Username" required>
-      <input class="password_login" id="password" type="text" placeholder="Password" required>
-      <button class="btn login_button" onclick="window.location.href='home'">Login</button>
-    </div>
+    <form class="login_form">
+      <div style="text-align:center;">
+        <input class="username_login" name="username" id="username" type="text" placeholder="Username" required>
+        <input class="password_login" name="password" id="password" type="password" placeholder="Password" required>
+        <a id="login_button" class="btn login_button">Login</a>
+      </div>
+    </form>
+
 
     <div style="text-align:center;">
       <a href="forget_your_password" style="color:white; text-decoration:underline;"> Forget Your Password? </a>
@@ -39,5 +44,51 @@
   <script src="/js/bootstrap.min.js"></script>
 
 </body>
+
+<script>
+  $(document).ready(function () {
+    var eatBuddy = '';
+    var name = '';
+    var imageSrc = ''
+    let mapImgSrc = {
+      'img1': 'images/shiba-inu.png',
+      'img2': 'images/cat.png',
+      'img3': 'images/bulldog.png',
+      'img4': 'images/koala.png'
+    }
+
+    $('#login_button').click(function() {
+      console.log("login clicked");
+
+      var form = document.querySelector('form');
+      var formData = new FormData(form);
+      var reqData = {}
+      for (var [key, value] of formData.entries()) {
+        reqData[key] = value;
+        if (key == 'username') {
+          name = value
+        }
+      }
+      console.log(name)
+      $.ajax({
+        type: "GET",
+        url: '/login',
+        //dataType: 'json',
+        success: (data) => {
+          // let { step1 } = res;
+          console.log('success!!!');
+          console.log(data);
+
+          // if (name == )
+          // eatBuddy = step1[name]['username']
+          // $('#eatBuddy').html(eatBuddy)
+        }
+
+      });
+      window.location.replace("home");
+
+    });
+  });
+  </script>
 
 </html>

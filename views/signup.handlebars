@@ -77,6 +77,13 @@
           'img3': 'images/bulldog.png',
           'img4': 'images/koala.png'
         }
+
+        // let obj ={"eatBuddy"： eatBuddy,
+        // };
+        // let json_str = JSON.stringfy(obj);
+        // let parsed_obj = .parse(json_str);
+        // let eb = parsed_obj.eatBuddy;
+
         $('#next').click(function() {
           var form = document.querySelector('form');
           var formData = new FormData(form);
@@ -94,7 +101,7 @@
             data: reqData,
             success: function (res) {
               // let { step1 } = res;
-              // console.log(step1);
+              console.log(step1);
               // eatBuddy = step1[name]['username']
               // $('#eatBuddy').html(eatBuddy)
             }

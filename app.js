@@ -89,6 +89,8 @@ app.post('/signup_step1', (req, res) => {
   console.log(step1_data)
   res.send(step1_data)
 });
+
+
 app.post('/signup_step2', (req, res) => {
   // let { formData } = req.form;
   let {
@@ -96,33 +98,48 @@ app.post('/signup_step2', (req, res) => {
     eatBuddy,
     name
   } = req.body
+
+  let userInfo = step1_data.step1;
+
   let obj = {
     'imageId': imageId,
     'eatBuddy': eatBuddy
   }
 
-  step2_data.step2[name] = obj
-  console.log(step2_data)
-  //
+  step2_data.step2[name] = obj; // indexed by username
+
+  step1_data.step1[name]['imageId'] = imageId;
+  step1_data.step1[name]['eatBuddy'] = eatBuddy;
+
+  console.log(step1_data)
+
+
   // step1_data.step1[username] = obj
   // console.log(step1_data)
   res.send(step2_data)
 });
 
-app.post('/rate',(req,res)=>{
-  let{
+app.post('/rate', (req, res) => {
+  let {
     duration,
     currentTime
-  }=req.body
+  } = req.body
   let obj = {
-    'duration':duration,
-    'currentTime':currentTime
+    'duration': duration,
+    'currentTime': currentTime
   }
   rateData.rate.push(obj);
   console.log(obj);
   res.send(rateData);
 
 });
+
+app.get('/login', (req, res) => {
+  const userPool = step1_data.step1;
+  console.log(userPool);
+  res.send(userPool);
+});
+
 app.get('/user', (req, res) => {
 
   const puppies = step2_data.step2;
