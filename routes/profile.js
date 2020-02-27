@@ -1,8 +1,9 @@
-var data = require('../data.json');
+var data = require('../users.json');
 
 exports.viewProject = function(req, res) {
-  // controller code goes here 
+  // controller code goes here
+
   var name = req.params.name;
   console.log("the project name is: " + name);
-  res.render("profile",data);
+  res.render("profile", data);
 };

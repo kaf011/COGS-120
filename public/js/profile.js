@@ -5,6 +5,7 @@ $(document).ready(function() {
   initializePage();
   //$('#profile_record').hide();
   $('ul li:gt(3)').hide();
+
 })
 
 /*
@@ -28,6 +29,7 @@ function projectClick(e) {
   // the object that triggered the event
 
   //$(this).css("background-color", "#7fff00");
+  console.log("hey");
 
   var record = $(this).closest(".record");
   var id = record.attr('id');

@@ -19,7 +19,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <script src="/js/profile.js"></script>
+
 </head>
 
 <body>
@@ -48,19 +48,21 @@
 
 
     <ul id="profile_record" style="padding-left:20px;padding-right:20px;">
-    {{#each records}}
+      <!--
+          {{#each records}}
 
-      <li class="record" id="{{id}}">
-        <!-- <a class="record-btn" href="#"> -->
-        <button type="button" class="btn btn-light btn-lg record-btn">
-          <a href="#" style="display: none" class="duration">{{Duration}}</a>
-          <a href="#" class="date"> {{Date}}</a>
-          <a href="#" class="time"> {{Time}} </a>
-          <a href="#" class="health"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></a>
-        </button>
-        <!-- </a> -->
-      </li>
-    {{/each}}
+            <li class="record" id="{{id}}">
+
+              <button type="button" class="btn btn-light btn-lg record-btn">
+                <a href="#" style="display: none" class="duration">{{Duration}}</a>
+                <a href="#" class="date"> {{Date}}</a>
+                <a href="#" class="time"> {{Time}} </a>
+                <a href="#" class="health"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></a>
+              </button>
+
+            </li>
+          {{/each}} -->
+
     </ul>
 
     <div align=center>
@@ -81,6 +83,9 @@
 <script src="js/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
+
+    //$('#profile_record').hide();
+
     let mapImgSrc = {
           'img1': 'images/shiba-inu.png',
           'img2': 'images/cat.png',
@@ -97,10 +102,60 @@
         console.log(imageSrc)
         $('#user-avatar').attr('src', imageSrc)
         $('#eatBuddy').html(data.eatBuddy)
+
+        for (i = 0; i < data.records.length; i++){
+          var stars = "";
+          if (data.records[i].Health == 1){
+            stars = `<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+          } else if (data.records[i].Health == 2){
+            stars = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>`;
+          } else if (data.records[i].Health == 3){
+            stars = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>`;
+          } else{
+            stars = `<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+          }
+          $('#profile_record').append(`
+                <li class="record" id="${data.records[i].id}">
+                  <!-- <a class="record-btn" href="#"> -->
+                  <button type="button" class="btn btn-light btn-lg record-btn">
+                    <a href="#" style="display: none" class="duration">{Duration}}</a>
+                    <a href="#" class="date"> ${data.records[i].Date}</a>
+                    <a href="#" class="time"> ${data.records[i].Time}</a>
+                    <a href="#" class="health">${stars}</a>
+                  </button>
+                  <!-- </a> -->
+                </li>`);
+        }
+
       }
     });
+
+    // $(".record-btn").click(function() {
+    //   var record = $(this).closest(".record");
+    //   var id = record.attr('id');
+    //   // var record_data = data.records[id-1];
+    //
+    //   var date = $(this).find(".date").html();
+    //   var duration = $(this).find(".duration").html();
+    //   console.log(duration);
+    //   var time = $(this).find(".time").html();
+    //   var health = $(this).find(".health").html();
+    //   var detail = $(this).find(".record-detail");
+    //   if (detail.length == 0) {
+    //     var string = `<div class="record-detail"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Durition: ${duration} </p><p>Health Rate: ${health} </p>`;
+    //     $(this).append(string);
+    //     // $(containingProject).append($(date).text);
+    //     // $(containingProject).append("<text>Start Time: </text>");
+    //     // $(containingProject).append($(time).text);
+    //     // $(containingProject).append("<text>End Time: </text>");
+    //   } else {
+    //     $(this).find(".record-detail").toggle();
+    //     //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+    //   }
+    // })
 
 
 })
 </script>
+<script src="/js/profile.js"></script>
 </html>
