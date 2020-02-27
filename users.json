@@ -5,8 +5,8 @@
       "pass": "0000",
       "cpass": "0000",
       "email": "default@default.com",
-      "imageId": "",
-      "eatBuddy": "",
+      "imageId": "1",
+      "eatBuddy": "DuoDuo",
       "records": [{
           "id": 1,
           "Date": "2020/2/05",
