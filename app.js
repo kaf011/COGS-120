@@ -68,6 +68,10 @@ app.get('/signup', signup.viewProject);
 app.get('/forget_your_password', forget_your_password.viewProject);
 app.get('/finish', finish.viewProject);
 
+app.post('/login_success', (req, res) => {
+  userName = req.body;
+})
+
 app.post('/signup_step1', (req, res) => {
   // let { formData } = req.form;
   let {
@@ -136,7 +140,7 @@ app.post('/rate', (req, res) => {
 
 app.get('/login', (req, res) => {
   const userPool = step1_data.step1;
-  console.log(userPool);
+  //console.log(userPool);
   res.send(userPool);
 });
 

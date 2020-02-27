@@ -20,7 +20,9 @@
     <form class="login_form">
       <div style="text-align:center;">
         <input class="username_login" name="username" id="username" type="text" placeholder="Username" required>
+        <p id="alert"> 🥺Username does not exist...</p>
         <input class="password_login" name="password" id="password" type="password" placeholder="Password" required>
+        <p id="alert_pw"> 🤪Wrong password!</p>
         <a id="login_button" class="btn login_button">Login</a>
       </div>
     </form>
@@ -47,15 +49,15 @@
 
 <script>
   $(document).ready(function () {
-    var eatBuddy = '';
+    //var eatBuddy = '';
     var name = '';
-    var imageSrc = ''
-    let mapImgSrc = {
-      'img1': 'images/shiba-inu.png',
-      'img2': 'images/cat.png',
-      'img3': 'images/bulldog.png',
-      'img4': 'images/koala.png'
-    }
+    var pw = ''
+    // let mapImgSrc = {
+    //   'img1': 'images/shiba-inu.png',
+    //   'img2': 'images/cat.png',
+    //   'img3': 'images/bulldog.png',
+    //   'img4': 'images/koala.png'
+    // }
 
     $('#login_button').click(function() {
       console.log("login clicked");
@@ -68,16 +70,52 @@
         if (key == 'username') {
           name = value
         }
+        if (key =='password'){
+          pw = value
+        }
       }
       console.log(name)
       $.ajax({
         type: "GET",
         url: '/login',
-        //dataType: 'json',
+        dataType: 'json',
         success: (data) => {
           // let { step1 } = res;
           console.log('success!!!');
           console.log(data);
+          console.log(name);
+          //let datajs = .parse(data);
+          // let obj ={"eatBuddy"： eatBuddy,
+          // };
+          // let json_str = JSON.stringfy(obj);
+          // let parsed_obj = .parse(json_str);
+          // let eb = parsed_obj.eatBuddy;
+          if (data.hasOwnProperty(name)){
+            console.log('Username exist!!!');
+            $('#alert').css("opacity","0");
+            $('#alert').css("height","0px");
+            if (data[name].pass != pw){
+              $('#alert_pw').css("opacity","100");
+              $('#alert_pw').css("height","18px");
+            } else{
+              $.ajax({
+                type: "POST",
+                url: '/login_success',
+                data: name,
+                success: function (res) {
+                  // let { step1 } = res;
+                  console.log(name);
+                  // eatBuddy = step1[name]['username']
+                  // $('#eatBuddy').html(eatBuddy)
+                }
+              });
+              window.location.replace("home");
+            }
+          } else {
+            console.log('User Not exist!!!');
+            $('#alert').css("opacity","100");
+            $('#alert').css("height","24px");
+          }
 
           // if (name == )
           // eatBuddy = step1[name]['username']
@@ -85,7 +123,7 @@
         }
 
       });
-      window.location.replace("home");
+
 
     });
   });
