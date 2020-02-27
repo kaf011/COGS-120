@@ -147,7 +147,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
-
+  console.log(userName);
   // const puppies = step2_data.step2;
   // const keys = Object.keys(puppies)
   // const puppy = step2_data.step2[keys[keys.length - 1]];
