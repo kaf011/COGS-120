@@ -92,7 +92,8 @@
       url: '/user',
       dataType:'json',
       success:(data)=>{
-        console.log(data);
+        //console.log(data);
+        console.log(data.imageId)
         imageSrc = mapImgSrc[data.imageId]
         console.log(imageSrc)
         $('#user-avatar').attr('src', imageSrc)

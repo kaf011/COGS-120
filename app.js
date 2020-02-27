@@ -137,7 +137,7 @@ app.post('/rate', (req, res) => {
     'rate': healthrate
   }
   user_data.users[userName].records.push(obj);
-  console.log(obj);
+  console.log(user_data.users[userName].records);
   res.send(rateData);
 
 });
@@ -154,7 +154,7 @@ app.get('/user', (req, res) => {
   // const keys = Object.keys(puppies)
   // const puppy = step2_data.step2[keys[keys.length - 1]];
   const puppy = user_data.users[userName];
-  console.log(puppy);
+  //console.log(puppy);
   res.send(puppy);
 
 });
