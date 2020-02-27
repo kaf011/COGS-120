@@ -141,7 +141,7 @@ app.post('/rate', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  const userPool = step1_data.step1;
+  const userPool = user_data.step1;
   //console.log(userPool);
   res.send(userPool);
 });
