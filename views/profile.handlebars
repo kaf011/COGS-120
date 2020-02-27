@@ -116,14 +116,14 @@
           }
           $('#profile_record').append(`
                 <li class="record" id="${data.records[i].id}">
-                  <!-- <a class="record-btn" href="#"> -->
+
                   <button type="button" class="btn btn-light btn-lg record-btn">
                     <a href="#" style="display: none" class="duration">{Duration}}</a>
                     <a href="#" class="date"> ${data.records[i].Date}</a>
                     <a href="#" class="time"> ${data.records[i].Time}</a>
                     <a href="#" class="health">${stars}</a>
                   </button>
-                  <!-- </a> -->
+                  
                 </li>`);
         }
 

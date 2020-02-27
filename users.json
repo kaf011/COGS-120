@@ -18,28 +18,28 @@
           "id": 2,
           "Date": "2020/2/05",
           "Time": "14:00",
-          "Health": 2,
+          "Health": 0,
           "Duration": "16min"
         },
         {
           "id": 3,
           "Date": "2020/2/04",
           "Time": "19:22",
-          "Health": 3,
+          "Health": 2,
           "Duration": "22min"
         },
         {
           "id": 4,
           "Date": "2020/2/04",
           "Time": "12:00",
-          "Health": 2,
+          "Health": 1,
           "Duration": "30min"
         },
         {
           "id": 5,
           "Date": "2020/2/04",
           "Time": "09:18",
-          "Health": 1,
+          "Health": 3,
           "Duration": "26min"
         }
       ]
