@@ -5,41 +5,41 @@
       "pass": "0000",
       "cpass": "0000",
       "email": "default@default.com",
-      "imageId": "1",
+      "imageId": "img1",
       "eatBuddy": "DuoDuo",
       "records": [{
           "id": 1,
           "Date": "2020/2/05",
           "Time": "18:00",
-          "Health": "fas fa-star-half-alt",
+          "Health": 3,
           "Duration": "20min"
         },
         {
           "id": 2,
           "Date": "2020/2/05",
           "Time": "14:00",
-          "Health": "",
+          "Health": 2,
           "Duration": "16min"
         },
         {
           "id": 3,
           "Date": "2020/2/04",
           "Time": "19:22",
-          "Health": "fas fa-star-half-alt",
+          "Health": 3,
           "Duration": "22min"
         },
         {
           "id": 4,
           "Date": "2020/2/04",
           "Time": "12:00",
-          "Health": "far fa-star",
+          "Health": 2,
           "Duration": "30min"
         },
         {
           "id": 5,
           "Date": "2020/2/04",
           "Time": "09:18",
-          "Health": "",
+          "Health": 1,
           "Duration": "26min"
         }
       ]
