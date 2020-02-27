@@ -21,7 +21,7 @@ var finish = require('./routes/finish');
 var add = require('./routes/add');
 
 var user_data = require("./users.json");
-var step2_data = require("./step2.json");
+//var step2_data = require("./step2.json");
 var rateData = require("./rate.json");
 
 // var signup_step2 = require("./signup_step2");
@@ -134,23 +134,24 @@ app.post('/rate', (req, res) => {
     'duration': duration,
     'rate': healthrate
   }
-  user_data.users[name].records.push(obj);
+  user_data.users[userName].records.push(obj);
   console.log(obj);
   res.send(rateData);
 
 });
 
 app.get('/login', (req, res) => {
-  const userPool = step1_data.step1;
+  const userPool = user_data.users;
   //console.log(userPool);
   res.send(userPool);
 });
 
 app.get('/user', (req, res) => {
 
-  const puppies = step2_data.step2;
-  const keys = Object.keys(puppies)
-  const puppy = step2_data.step2[keys[keys.length - 1]];
+  // const puppies = step2_data.step2;
+  // const keys = Object.keys(puppies)
+  // const puppy = step2_data.step2[keys[keys.length - 1]];
+  const puppy = user_data.users[userName];
   console.log(puppy);
   res.send(puppy);
 
