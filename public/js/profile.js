@@ -8,7 +8,7 @@ $(document).ready(function() {
   console.log("hey");
   $(".record-btn").click(function() {
     console.log("hey2");
-    e.preventDefault();
+
     // In an event handler, $(this) refers to
 
     // the object that triggered the event

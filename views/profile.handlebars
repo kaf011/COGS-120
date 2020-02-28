@@ -92,6 +92,9 @@
           'img3': 'images/bulldog.png',
           'img4': 'images/koala.png'
         }
+
+
+
     $.ajax({
       type:'GET',
       url: '/user',
@@ -102,6 +105,7 @@
         console.log(imageSrc)
         $('#user-avatar').attr('src', imageSrc)
         $('#eatBuddy').html(data.eatBuddy)
+
 
         for (i = 0; i < data.records.length; i++){
           var stars = "";
@@ -123,12 +127,16 @@
                     <a href="#" class="time"> ${data.records[i].Time}</a>
                     <a href="#" class="health">${stars}</a>
                   </button>
-                  
+
                 </li>`);
         }
 
       }
     });
+    // function recordClicked(e){
+    //
+    //   console.log("hey2");
+    // }
 
     // $(".record-btn").click(function() {
     //   var record = $(this).closest(".record");
