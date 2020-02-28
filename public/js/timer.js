@@ -90,13 +90,15 @@ set.onclick = () => {
     var duration = '';
     var date = new Date();
     var currentTime = date.getHours();
+    var newMin = date.getMinutes();
+    if(newMin<=9){newMin="0"+newMin;}
     var newTime;
     var newDate = (date.getMonth() + 1) + "/" + date.getDate();
     if(currentTime>12){
-        newTime = date.getHours()-12 + ":" + date.getMinutes()+" PM";
+        newTime = date.getHours()-12 + ":" + newMin+"PM";
     }
     else{
-        newTime = date.getHours() + ":" + date.getMinutes()+" AM";
+        newTime = date.getHours() + ":" + newMin+"AM";
     }
     var healthrate = 1;
     if(currentTime>=7&&currentTime<=9){healthrate++;}
@@ -155,6 +157,7 @@ set.onclick = () => {
 
         if(minutes==0&&seconds == 0) {
             duration = saveSec;
+            duration = Math.floor(sec / 60)+"min"+duration%60+"sec";
             if(duration>=900&&duration<=1500){
                 healthrate++;
             }
@@ -186,6 +189,7 @@ set.onclick = () => {
         //     duration = sec*-1;
         // }else{
             duration = saveSec-sec;
+            duration = Math.floor(sec / 60)+"min"+duration%60+"sec";
         // };
         if(duration>=900&&duration<=1500){
             healthrate++;

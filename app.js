@@ -18,11 +18,11 @@ var step2 = require('./routes/step2');
 var step3 = require('./routes/step3');
 var forget_your_password = require('./routes/forget_your_password');
 var finish = require('./routes/finish');
-var add = require('./routes/add');
+//var add = require('./routes/add');
 
 var user_data = require("./users.json");
 //var step2_data = require("./step2.json");
-var rateData = require("./rate.json");
+//var rateData = require("./rate.json");
 
 // var signup_step2 = require("./signup_step2");
 
@@ -131,14 +131,16 @@ app.post('/rate', (req, res) => {
     healthrate
   } = req.body
   let obj = {
-    'date': newDate,
-    'time': newTime,
-    'duration': duration,
-    'rate': healthrate
+    'Date': newDate,
+    'Time': newTime,
+    'Duration': duration,
+    'Health': healthrate
   }
+  user_data.users[userName].records.reverse();
   user_data.users[userName].records.push(obj);
-  console.log(obj);
-  res.send(rateData);
+  user_data.users[userName].records.reverse();
+  console.log(user_data.users[userName].records);
+  res.send(user_data.users[userName].records);
 
 });
 
@@ -149,17 +151,17 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
-
+  console.log(userName);
   // const puppies = step2_data.step2;
   // const keys = Object.keys(puppies)
   // const puppy = step2_data.step2[keys[keys.length - 1]];
   const puppy = user_data.users[userName];
-  console.log(puppy);
+  //console.log(puppy);
   res.send(puppy);
 
 });
 
-app.get('/add', add.addRecord);
+//app.get('/add', add.addRecord);
 
 // Example route
 // app.get('/users', user.list);

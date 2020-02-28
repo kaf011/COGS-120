@@ -29,13 +29,9 @@
     </p>
     <div>
         <h3>Health Rate</h3>
-        <form id = "newRecord" method="get" action="/add">
-        <div>
-        <label for="Health"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></label>
-        </div>
-        <input type="submit" class="btn" value="DONE"></input>
-        </form>
+        <a href="#" id="health"></a>
     </div>
+    <a href="profile" class="btn">DONE</a>
     </div>
 
 </div>
@@ -57,11 +53,23 @@
       url: '/user',
       dataType:'json',
       success:(data)=>{
-        console.log(data.eatBuddy);
+        //console.log(data.eatBuddy);
         imageSrc = mapImgSrc[data.imageId]
-        console.log(imageSrc)
+        console.log(data.records[0].Health)
         $('#user-avatar').attr('src', imageSrc)
         $('#eatBuddy').html(data.eatBuddy)
+        var stars = "";
+        var rate = data.records[0].Health;
+        if (rate == 1){
+            stars = `<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+          } else if (rate == 2){
+            stars = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>`;
+          } else if (rate == 3){
+            stars = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>`;
+          } else{
+            stars = `<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+          }
+          $('#health').html(stars);
       }
     });
 

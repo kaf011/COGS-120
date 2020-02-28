@@ -9,37 +9,37 @@
       "eatBuddy": "DuoDuo",
       "records": [{
           "id": 1,
-          "Date": "2020/2/05",
-          "Time": "18:00",
+          "Date": "2/05",
+          "Time": "6:00PM",
           "Health": 3,
           "Duration": "20min"
         },
         {
           "id": 2,
-          "Date": "2020/2/05",
-          "Time": "14:00",
-          "Health": 0,
+          "Date": "2/05",
+          "Time": "2:00PM",
+          "Health": 2,
           "Duration": "16min"
         },
         {
           "id": 3,
-          "Date": "2020/2/04",
-          "Time": "19:22",
-          "Health": 2,
+          "Date": "2/04",
+          "Time": "7:22PM",
+          "Health": 3,
           "Duration": "22min"
         },
         {
           "id": 4,
-          "Date": "2020/2/04",
-          "Time": "12:00",
-          "Health": 1,
-          "Duration": "30min"
+          "Date": "2/04",
+          "Time": "8:00AM",
+          "Health": 2,
+          "Duration": "30min25sec"
         },
         {
           "id": 5,
-          "Date": "2020/2/04",
-          "Time": "09:18",
-          "Health": 3,
+          "Date": "2/04",
+          "Time": "09:18AM",
+          "Health": 1,
           "Duration": "26min"
         }
       ]
