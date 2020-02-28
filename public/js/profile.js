@@ -7,7 +7,6 @@ $(document).ready(function() {
   $('ul li:gt(3)').hide();
   console.log("hey");
   $(".record-btn").click(function() {
-    console.log("hey2");
 
     // In an event handler, $(this) refers to
 
