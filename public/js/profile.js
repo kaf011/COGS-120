@@ -4,7 +4,7 @@
 $(document).ready(function() {
   //initializePage();
   //$('#profile_record').hide();
-  $('ul li:gt(3)').hide();
+
   console.log("hey");
   $(".record-btn").click(function() {
 

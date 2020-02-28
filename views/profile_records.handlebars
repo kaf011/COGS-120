@@ -35,8 +35,8 @@
 
 
 
-    <div>
-    {{#each records}}
+    <div class="record" id="profile_record">
+    <!-- {{#each records}}
 
       <div class="record" style="margin-left:4px;">
         <button type="button" class="btn btn-light btn-lg record-btn">
@@ -46,7 +46,7 @@
           <a href="#" class="health"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="{{Health}}"></i></a>
         </button>
 	    </div>
-		{{/each}}
+		{{/each}} -->
     <hr>
 
       <!-- <div class="record">
@@ -119,6 +119,54 @@
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+
 </body>
+
+<script>
+  $(document).ready(function() {
+
+
+    $.ajax({
+      type:'GET',
+      url: '/user',
+      dataType:'json',
+      success:(data)=>{
+
+        for (i = 0; i < data.records.length; i++){
+          var stars = "";
+          if (data.records[i].Health == 1){
+            stars = `<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+          } else if (data.records[i].Health == 2){
+            stars = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>`;
+          } else if (data.records[i].Health == 3){
+            stars = `<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>`;
+          } else{
+            stars = `<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>`;
+          }
+          $('#profile_record').append(`
+                  <button type="button" id="record-btn${i}" class="btn btn-light btn-lg record-btn">
+                    <a href="#" style="display: none" class="duration">${data.records[i].Duration}</a>
+                    <a href="#" class="date"> ${data.records[i].Date}</a>
+                    <a href="#" class="time"> ${data.records[i].Time}</a>
+                    <a href="#" class="health">${stars}</a>
+                    <div class="record-detail" style="display: none;"><h2>Meal Record</h2><p>Date: ${data.records[i].Date}</p><p>Time: ${data.records[i].Time}</p><p>Durition: ${data.records[i].Duration} </p><p>Health Rate: ${stars} </p>
+                  </button>`);
+
+        }
+        $(".record-btn").click(function(e) {
+          e.preventDefault();
+          $(this).find(".record-detail").toggle();
+          $(this).find(".date").toggle();
+          $(this).find(".time").toggle();
+          $(this).find(".health").toggle();
+
+        });
+
+      }
+    });
+
+
+})
+</script>
 
 </html>

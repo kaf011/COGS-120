@@ -84,6 +84,7 @@
 <script>
   $(document).ready(function() {
 
+
     //$('#profile_record').hide();
 
     let mapImgSrc = {
@@ -131,35 +132,17 @@
                   </button>
 
                 </li>`);
-                $(".record-btn").click(function(e) {
-                  e.preventDefault();
-                  $(this).find(".record-detail").toggle();
 
-                  // var record = $(this).closest(".record");
-                  // var id = record.attr('id');
-                  // var date = $(this).find(".date").html();
-                  // var duration = $(this).find(".duration").html();
-                  // var time = $(this).find(".time").html();
-                  // var health = $(this).find(".health").html();
-                  // var detail = $(this).find(".record-detail");
-                  // if (detail.length == 0) {
-                  //   var string = `<div class="record-detail" style="display: block;"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Durition: ${duration} </p><p>Health Rate: ${health} </p>`;
-                  //   console.log("inside if detail.length == 0");
-                  //   console.log(detail.length);
-                  //   $(this).append(string);
-                  //   //console.log(this);
-                  //   // $(containingProject).append($(date).text);
-                  //   // $(containingProject).append("<text>Start Time: </text>");
-                  //   // $(containingProject).append($(time).text);
-                  //   // $(containingProject).append("<text>End Time: </text>");
-                  // } else {
-                  //
-                  //   $(this).find(".record-detail").toggle();
-                  //   console.log(detail.length);
-                  //   //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
-                  // };
-                });
         }
+        $(".record-btn").click(function(e) {
+          e.preventDefault();
+          $(this).find(".record-detail").toggle();
+          $(this).find(".date").toggle();
+          $(this).find(".time").toggle();
+          $(this).find(".health").toggle();
+
+        });
+        $('ul li:gt(3)').hide();
 
       }
     });
