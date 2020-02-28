@@ -157,10 +157,11 @@ set.onclick = () => {
 
         if(minutes==0&&seconds == 0) {
             duration = saveSec;
-            duration = Math.floor(sec / 60)+"min"+duration%60+"sec";
             if(duration>=900&&duration<=1500){
                 healthrate++;
             }
+            duration = Math.floor(sec / 60)+"min"+duration%60+"sec";
+            
         
         //console.log(duration);
         $.ajax({
@@ -189,13 +190,12 @@ set.onclick = () => {
         //     duration = sec*-1;
         // }else{
             duration = saveSec-sec;
+            if(duration>=900&&duration<=1500){
+                healthrate++;
+            }
             duration = Math.floor(sec / 60)+"min"+duration%60+"sec";
         // };
-        if(duration>=900&&duration<=1500){
-            healthrate++;
-        }
-        if(currentTime)
-        console.log(duration);
+        
         $.ajax({
             type: "POST",
             url: '/rate',
