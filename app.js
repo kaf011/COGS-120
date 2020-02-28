@@ -59,14 +59,15 @@ if ('development' == app.get('env')) {
 
 app.get('/', index.view);
 app.get('/home', home.view);
-app.get('/profile', profile.viewProject);
-app.get('/profile_records', profile_records.viewProject);
-app.get('/step1', step1.viewProject);
-app.get('/step2', step2.viewProject);
-app.get('/step3', step3.viewProject);
-app.get('/signup', signup.viewProject);
-app.get('/forget_your_password', forget_your_password.viewProject);
-app.get('/finish', finish.viewProject);
+app.get('/profile', profile.view);
+app.get('/profile_records', profile_records.view);
+app.get('/step1', step1.view);
+app.get('/step2', step2.view);
+app.get('/step3', step3.view);
+app.get('/step3B',step3.viewB);
+app.get('/signup', signup.view);
+app.get('/forget_your_password', forget_your_password.view);
+app.get('/finish', finish.view);
 
 app.post('/login_success', (req, res) => {
   userName = req.body["name"];

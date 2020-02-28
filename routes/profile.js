@@ -1,6 +1,6 @@
 var data = require('../users.json');
 
-exports.viewProject = function(req, res) {
+exports.view = function(req, res) {
   // controller code goes here
 
   var name = req.params.name;

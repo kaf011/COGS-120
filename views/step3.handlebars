@@ -22,10 +22,12 @@
 </head>
 
 <body>
+
 <div class="container" style="position:relative; top:20px;">
     <div id="header">
       <a href="step2"class="btn back-btn">Back</a>
     </div>
+    
     <div class="step" id="header1" align="center">
       <h2>Step 3</h2>
       <h1>Set the time</h1>
@@ -34,25 +36,19 @@
       <h1 style="margin-top:34px;">Time Remaining</h1>
       <img class="img" src="/images/pet-food.png" alt="avatar">
     </div>
-    {{!-- <div class="step" id="additional" align="center" style="overflow:hidden;position:relative; top:40px;">
-      <h1 style="margin-top:34px;">Time Out</h1>
-      <img class="img" src="/images/pet-food.png" alt="avatar">
-      <h3>Exceeded Time</h3>
-    </div> --}}
 </div>
+
+{{#if viewB}}
+  <!--b testing-->
+  <div id="myProgress">
+  <div id="myBar"></div>
+  </div>
+  <button id="startbtn" class= "btn next-btn" style="margin-top:10%;" align="center" onclick="move()">Start</button>
+  <button id="donebtn" class= "btn next-btn" style="margin-top:10%;" align="center" onclick="move()">Done</button>
+<!--b testing done-->
+{{else}}
 <div class="containe"> <!-- start container -->
 
-
-  {{!-- <div class="hours" id="hours"> <!-- start hour -->
-
-      <button class="plus" style="margin:10px 15px"><i class="fa fa-chevron-up fa-3x"></i></button>
-      <button class="minus" style="margin:-10px 15px"><i class="fa fa-chevron-down fa-3x"></i></button>
-
-      <h3>00</h3>
-      <p style="margin-left:25px">hour</p>
-
-  </div> <!-- end hour --> --}}
-  
   <div class="minutes" id="minutes"> <!-- start minute -->
       <button class="plus" style="margin:10px 5px"><i class="fa fa-chevron-up fa-3x"></i></button>
       <button class="minus" style="margin:-10px 5px"><i class="fa fa-chevron-down fa-3x"></i></button>
@@ -74,17 +70,23 @@
 
   <button class="btn set" id="set" align="center">Start</button>
 
+
   <div class="controls" id="controls"> <!-- start buttons -->
 
       <button class= "btn set" id="pause" style="margin-left:60px; margin-top:0px; margin-bottom:10px;">DONE</i></button>
 
   </div> <!-- end buttons -->
+
 </div> <!-- end container -->
+{{/if}}
+
+
 
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/timer.js"></script>
+  <script src="/js/step3b.js"></script>
 </body>
 
 </html>
