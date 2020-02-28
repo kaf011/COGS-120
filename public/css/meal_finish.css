@@ -90,3 +90,7 @@ body {
   /* box-shadow: 2px 6px 10px #e6e6e6; */
   /* clear: left; meaning empty-float, prevent it from wrapping img to the left */
 }
+
+i {
+  color: black;
+}
