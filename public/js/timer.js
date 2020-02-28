@@ -18,6 +18,7 @@ const pause = document.getElementById('pause');
 
 // get time paragraph
 //const hoursDiv = document.getElementById('hours').children[2];
+console.log(header)
 const minutesDiv = document.getElementById('minutes').children[2]
 const secondsDiv = document.getElementById('seconds').children[2];
 
