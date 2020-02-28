@@ -65,5 +65,5 @@ function done(){
             console.log(res);
         }
     });
-    //window.location.replace("finish");
+    window.location.replace("finish");
 }
