@@ -2,9 +2,39 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-  initializePage();
+  //initializePage();
   //$('#profile_record').hide();
   $('ul li:gt(3)').hide();
+  console.log("hey");
+  $(".record-btn").click(function() {
+
+    // In an event handler, $(this) refers to
+
+    // the object that triggered the event
+
+    //$(this).css("background-color", "#7fff00");
+
+
+    var record = $(this).closest(".record");
+    var id = record.attr('id');
+    var date = $(this).find(".date").html();
+    var duration = $(this).find(".duration").html();
+    console.log(duration);
+    var time = $(this).find(".time").html();
+    var health = $(this).find(".health").html();
+    var detail = $(this).find(".record-detail");
+    if (detail.length == 0) {
+      var string = `<div class="record-detail"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Durition: ${duration} </p><p>Health Rate: ${health} </p>`;
+      $(this).append(string);
+      // $(containingProject).append($(date).text);
+      // $(containingProject).append("<text>Start Time: </text>");
+      // $(containingProject).append($(time).text);
+      // $(containingProject).append("<text>End Time: </text>");
+    } else {
+      $(this).find(".record-detail").toggle();
+      //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+    }
+  });
 
 })
 
@@ -15,43 +45,10 @@ function initializePage() {
 
   // example: $("#div-id").click(functionToCall);
   //$(".record-btn").click(addProjectDetails); //TODO
-  $(".record-btn").click(projectClick); //
 
 }
 
 
-function projectClick(e) {
-  // prevent the page from reloading
-
-  e.preventDefault();
-  // In an event handler, $(this) refers to
-
-  // the object that triggered the event
-
-  //$(this).css("background-color", "#7fff00");
-  console.log("hey");
-
-  var record = $(this).closest(".record");
-  var id = record.attr('id');
-  var date = $(this).find(".date").html();
-  var duration = $(this).find(".duration").html();
-  console.log(duration);
-  var time = $(this).find(".time").html();
-  var health = $(this).find(".health").html();
-  var detail = $(this).find(".record-detail");
-  if (detail.length == 0) {
-    var string = `<div class="record-detail"><h2>Meal Record</h2><p>Date: ${date}</p><p>Time: ${time}</p><p>Durition: ${duration} </p><p>Health Rate: ${health} </p>`;
-    $(this).append(string);
-    // $(containingProject).append($(date).text);
-    // $(containingProject).append("<text>Start Time: </text>");
-    // $(containingProject).append($(time).text);
-    // $(containingProject).append("<text>End Time: </text>");
-  } else {
-    $(this).find(".record-detail").toggle();
-    //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
-  }
-
-}
 
 // TODO: function to use later, new files required.
 // function addProjectDetails(e) {
