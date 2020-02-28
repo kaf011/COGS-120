@@ -64,7 +64,7 @@ app.get('/profile_records', profile_records.view);
 app.get('/step1', step1.view);
 app.get('/step2', step2.view);
 app.get('/step3', step3.view);
-app.get('/step3B',step3.viewB);
+app.get('/step3B', step3.viewB);
 app.get('/signup', signup.view);
 app.get('/forget_your_password', forget_your_password.view);
 app.get('/finish', finish.view);
@@ -121,7 +121,7 @@ app.post('/signup_step2', (req, res) => {
 
   // step1_data.step1[username] = obj
   // console.log(step1_data)
-  res.send(user_data)
+  res.send(user_data.users)
 });
 
 app.post('/rate', (req, res) => {
