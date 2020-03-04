@@ -14,7 +14,7 @@ function projectClick(e) {
     hitType: 'timing',
     timingCategory: 'JS Dependencies',
     timingVar: 'load',
-    timingValue: 3549
+    timingValue: timeSincePageLoad
   });
   console.log(timeSincePageLoad);
 
