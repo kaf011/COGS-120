@@ -8,8 +8,9 @@ $(document).ready(function() {
 function projectClick(e) {
   // prevent the page from reloading
   var timeSincePageLoad = Math.round(performance.now());
-  ga('send', 'event', 'Timer', 'set');
+  //ga('send', 'event', 'Timer', 'set');
   ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
+  console.log(timeSincePageLoad);
 
   e.preventDefault();
   // In an event handler, $(this) refers to
