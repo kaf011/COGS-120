@@ -225,15 +225,3 @@ set.onclick = () => {
     clearInterval(setIn);
   };
 
-
-
-  <<
-  << << < HEAD
-}; >>>
->>>
->
-ba1c7c6eb3dfaf0f4dbfe93fd020ff0cdb9eb190
-  ===
-  === =
-}; >>>
->>> > ba4dda059bc1f739fba62fa5341801931d6d4dac
