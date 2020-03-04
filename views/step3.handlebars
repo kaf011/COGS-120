@@ -19,10 +19,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 {{!--
   <script src="/js/profile.js"></script> --}}
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/timer.js"></script>
-  <script src="/js/step3b.js"></script>
+  {{> GoogleAnalytics}}
+
 </head>
 
 <body>
@@ -40,13 +38,13 @@
  <!--b testing-->
 <div class="container step" style="position:relative; top:5%;">
   <h2 align="center">Step 3</h2>
-  <h1 align="center">Start your eating session</h1>
+  <h1 align="center">Start your 20-minute eating session</h1>
 
   <div id="myProgress">
   <div id="myBar" style="color:black;">0min0sec</div>
   </div>
   <button id="startbtn" class= "btn next-btn" style="margin-top:10%;" align="center" onclick="move()">Start</button>
-  <button id="donebtn" class= "btn next-btn" style="margin-top:10%;display:none;" align="center" onclick="move()">Done</button>
+  <button id="donebtn" class= "btn next-btn" style="margin-top:10%;display:none;" align="center" onclick="done()">Done</button>
 </div>
 <div class="minutes" id="minutes" style="display: none;"> <!-- start minute -->
     <button class="plus" style="margin:10px 5px"><i class="fa fa-chevron-up fa-3x"></i></button>
@@ -56,12 +54,15 @@
     <p>minute</p>
 
 </div>
+<script src="/js/step3b.js"></script>
 <!--b testing done-->
 {{else}}
-<div class="container" style="position:relative; top:20px;">
+
+<div class="container" style="position:relative; top:40px;">
   <div class="step" id="header1" align="center">
       <h2>Step 3</h2>
       <h1>Set the time</h1>
+      <p style = "color:white;margin-top:15px" align="center">We suggest a healthy 20-minute session</p>
     </div>
     <div class="step" id="header2" align="center" style="overflow:hidden;position:relative; top:40px;">
       <h1 style="margin-top:34px;">Time Remaining</h1>
@@ -74,7 +75,7 @@
       <button class="plus" style="margin:10px 5px"><i class="fa fa-chevron-up fa-3x"></i></button>
       <button class="minus" style="margin:-10px 5px"><i class="fa fa-chevron-down fa-3x"></i></button>
 
-      <h3 style="margin-left:10px">15</h3>
+      <h3 style="margin-left:10px">20</h3>
       <p>minute</p>
 
   </div> <!-- end minute -->
@@ -89,6 +90,10 @@
 
   </div> <!-- end second -->
 
+
+    {{!-- <p style = "color:#FFAF23;margin-top:15px" align="center">We suggest a healthy 20-minute session</p>>
+  --}}
+
   <button class="btn set" id="set" align="center">Start</button>
 
 
@@ -99,9 +104,13 @@
   </div> <!-- end buttons -->
 
 </div> <!-- end container -->
+<script src="/js/timer.js"></script>
 {{/if}}
 
 
+
+<script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
 
 

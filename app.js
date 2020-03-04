@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-var userName = '';
+var userName = 'default';
 var express = require('express');
 var http = require('http');
 var path = require('path');
