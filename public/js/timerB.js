@@ -82,6 +82,7 @@ const secondsDiv = document.getElementById('seconds').children[0];
 
 // set the time
 set.onclick = () => {
+  ga('send', 'event', 'Timer', 'set');
   if (window.performance) {
     // Gets the number of milliseconds since page load
     // (and rounds the result since the value must be an integer).

@@ -83,7 +83,7 @@ minus.forEach((elem) => {
 // set the time
 set.onclick = () => {
   // var timeSincePageLoad = Math.round(performance.now());
-  // // ga('send', 'event', 'Timer', 'set');
+  ga('send', 'event', 'Timer', 'set');
   // ga('send', {
   //   hitType: 'timing',
   //   timingCategory: 'JS Dependencies',
