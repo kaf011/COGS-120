@@ -90,10 +90,8 @@ set.onclick = () => {
     // let sec = min + window.parseInt(secondsDiv.textContent);
     var min = document.getElementById("setMin").value*60;
     var sec = document.getElementById("setSec").value;
-    console.log(sec);
     sec = Number(min)+Number(sec);
-    console.log(min);
-    console.log(sec);
+ 
     
 
     let saveSec = sec;
