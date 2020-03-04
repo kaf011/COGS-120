@@ -82,6 +82,8 @@ minus.forEach((elem) => {
 
 // set the time
 set.onclick = () => {
+  var timeSincePageLoad = Math.round(performance.now());
+  ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
 
   //const hou = window.parseInt(hoursDiv.textContent) * 60;
   const min = (window.parseInt(minutesDiv.textContent)) * 60;
@@ -202,7 +204,8 @@ set.onclick = () => {
     if (duration >= 900 && duration <= 1500) {
       healthrate++;
     } <<
-    << << < HEAD
+    <<
+    << < HEAD
     if (currentTime)
       console.log(duration);
     $.ajax({
@@ -226,8 +229,7 @@ set.onclick = () => {
 
 
 
-}; ===
-=== =
+};
 
 // countdown function
 function countdown() {
@@ -318,4 +320,5 @@ pause.onclick = () => {
 
 
 }; >>>
->>> > ba1c7c6eb3dfaf0f4dbfe93fd020ff0cdb9eb190
+>>>
+> ba1c7c6eb3dfaf0f4dbfe93fd020ff0cdb9eb190
