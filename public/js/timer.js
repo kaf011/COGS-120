@@ -82,14 +82,23 @@ minus.forEach((elem) => {
 
 // set the time
 set.onclick = () => {
-  // var timeSincePageLoad = Math.round(performance.now());
-  ga('send', 'event', 'Timer', 'set');
+  var timeSincePageLoad = Math.round(performance.now());
+  console.log(timeSincePageLoad);
+  //ga('send', 'event', 'Timer', 'set');
   // ga('send', {
   //   hitType: 'timing',
   //   timingCategory: 'JS Dependencies',
   //   timingVar: 'load',
   //   timingValue: timeSincePageLoad
   // });
+  ga('send', {
+    hitType: 'timing',
+    timingCategory: 'JS Dependencies',
+    timingVar: 'load',
+    timingValue: timeSincePageLoad
+  });
+
+
   if (window.performance) {
     // Gets the number of milliseconds since page load
     // (and rounds the result since the value must be an integer).
