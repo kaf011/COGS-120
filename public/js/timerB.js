@@ -2,8 +2,8 @@ const header = document.getElementById('header');
 const header2 = document.getElementById('header2');
 //const additional = document.getElementById('additional');
 // get plus and minus buttons
-const plus = document.querySelectorAll('.plus');
-const minus = document.querySelectorAll('.minus');
+// const plus = document.querySelectorAll('.plus');
+// const minus = document.querySelectorAll('.minus');
 
 // get set time button
 const set = document.getElementById('set');
@@ -18,75 +18,83 @@ const pause = document.getElementById('pause');
 
 // get time paragraph
 //const hoursDiv = document.getElementById('hours').children[2];
-console.log(header)
-const minutesDiv = document.getElementById('minutes').children[2]
-const secondsDiv = document.getElementById('seconds').children[2];
+//console.log(header)
+const minutesDiv = document.getElementById('minutes').children[0]
+const secondsDiv = document.getElementById('seconds').children[0];
 
 //additional.style.display = 'none';
 // plus the time
-plus.forEach((elem) => {
+// plus.forEach((elem) => {
 
-    elem.onclick = () => {
+//     elem.onclick = () => {
 
-        let value = elem.parentElement.children[2];
+//         let value = elem.parentElement.children[2];
 
-        if (elem.parentElement.className === 'minutes') {
-            if (value.textContent == 99) {
-                value.textContent = window.parseInt(value.textContent);
-            } else {
-              value.textContent = window.parseInt(value.textContent) + 1;
-            }
+//         if (elem.parentElement.className === 'minutes') {
+//             if (value.textContent == 99) {
+//                 value.textContent = window.parseInt(value.textContent);
+//             } else {
+//               value.textContent = window.parseInt(value.textContent) + 1;
+//             }
 
-            if (value.textContent <= 9) {
-                value.textContent = '0' + window.parseInt(value.textContent);
-            }
-        }
+//             if (value.textContent <= 9) {
+//                 value.textContent = '0' + window.parseInt(value.textContent);
+//             }
+//         }
 
-        if (elem.parentElement.className === 'seconds') {
-            if (value.textContent == 59) {
-                value.textContent = window.parseInt(value.textContent);
-            } else {
-                value.textContent = window.parseInt(value.textContent) + 1;
-            }
+//         if (elem.parentElement.className === 'seconds') {
+//             if (value.textContent == 59) {
+//                 value.textContent = window.parseInt(value.textContent);
+//             } else {
+//                 value.textContent = window.parseInt(value.textContent) + 1;
+//             }
 
-            if (value.textContent <= 9) {
-                value.textContent = '0' + window.parseInt(value.textContent);
-            }
-        }
+//             if (value.textContent <= 9) {
+//                 value.textContent = '0' + window.parseInt(value.textContent);
+//             }
+//         }
 
 
-    }
+//     }
 
-});
+// });
 
-// minus the time
-minus.forEach((elem) => {
+// // minus the time
+// minus.forEach((elem) => {
 
-    elem.onclick = () => {
+//     elem.onclick = () => {
 
-        let value = elem.parentElement.children[2];
+//         let value = elem.parentElement.children[2];
 
-        if (value.textContent == 0) {
-          value.textContent = window.parseInt(value.textContent);
-        } else {
-          value.textContent = window.parseInt(value.textContent) - 1;
-        }
+//         if (value.textContent == 0) {
+//           value.textContent = window.parseInt(value.textContent);
+//         } else {
+//           value.textContent = window.parseInt(value.textContent) - 1;
+//         }
 
-        if (value.textContent <= 9) {
-            value.textContent = '0' + window.parseInt(value.textContent);
-        }
+//         if (value.textContent <= 9) {
+//             value.textContent = '0' + window.parseInt(value.textContent);
+//         }
 
-    }
+//     }
 
-});
+// });
 
 // set the time
 set.onclick = () => {
-
+    document.getElementById('minutes').style.display= 'block';
+    document.getElementById('seconds').style.display= 'block';
+    document.getElementById('setting').style.display= 'none';
     //const hou = window.parseInt(hoursDiv.textContent) * 60;
-    const min = (window.parseInt(minutesDiv.textContent)) * 60;
-    let sec = min + window.parseInt(secondsDiv.textContent);
-    console.log(secondsDiv.textContent);
+    // const min = (window.parseInt(minutesDiv.textContent)) * 60;
+    // let sec = min + window.parseInt(secondsDiv.textContent);
+    var min = document.getElementById("setMin").value*60;
+    var sec = document.getElementById("setSec").value;
+    console.log(sec);
+    sec = Number(min)+Number(sec);
+    console.log(min);
+    console.log(sec);
+    
 
     let saveSec = sec;
     var duration = '';
@@ -120,13 +128,13 @@ set.onclick = () => {
         header2.style.display = 'block';
         controls.style.display = 'block';
 
-        plus.forEach((elem) => {
-            elem.style.display = 'none';
-        });
+        // plus.forEach((elem) => {
+        //     elem.style.display = 'none';
+        // });
 
-        minus.forEach((elem) => {
-            elem.style.display = 'none';
-        });
+        // minus.forEach((elem) => {
+        //     elem.style.display = 'none';
+        // });
 
         var setIn = setInterval(countdown, 1000);
     }
@@ -144,6 +152,7 @@ set.onclick = () => {
            
 
         minutes %= 60;
+        console.log(minutes);
 
         //if (hours <= 9) hours = '0' + hours;
         if (minutes <= 9) minutes = '0' + minutes;
