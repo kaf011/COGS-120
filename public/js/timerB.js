@@ -82,8 +82,8 @@ const secondsDiv = document.getElementById('seconds').children[0];
 
 // set the time
 set.onclick = () => {
-    document.getElementById('minutes').style.display= 'block';
-    document.getElementById('seconds').style.display= 'block';
+    document.getElementById('minutes').style.display= 'inline-block';
+    document.getElementById('seconds').style.display= 'inline-block';
     document.getElementById('setting').style.display= 'none';
     //const hou = window.parseInt(hoursDiv.textContent) * 60;
     // const min = (window.parseInt(minutesDiv.textContent)) * 60;
