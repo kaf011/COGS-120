@@ -17,7 +17,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-{{!-- 
+{{!--
   <script src="/js/profile.js"></script> --}}
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
@@ -31,9 +31,9 @@
     <div id="header">
       <a href="step2"class="btn back-btn">Back</a>
     </div>
-</div>   
+</div>
 
-    
+
 
 
 {{#if viewB}}
@@ -47,6 +47,14 @@
   </div>
   <button id="startbtn" class= "btn next-btn" style="margin-top:10%;" align="center" onclick="move()">Start</button>
   <button id="donebtn" class= "btn next-btn" style="margin-top:10%;display:none;" align="center" onclick="move()">Done</button>
+</div>
+<div class="minutes" id="minutes" style="display: none;"> <!-- start minute -->
+    <button class="plus" style="margin:10px 5px"><i class="fa fa-chevron-up fa-3x"></i></button>
+    <button class="minus" style="margin:-10px 5px"><i class="fa fa-chevron-down fa-3x"></i></button>
+
+    <h3 style="margin-left:10px">15</h3>
+    <p>minute</p>
+
 </div>
 <!--b testing done-->
 {{else}}
@@ -96,7 +104,7 @@
 
 
 
-  
+
 </body>
 
 </html>

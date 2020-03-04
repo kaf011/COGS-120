@@ -76,6 +76,7 @@
 
   captureButton.addEventListener('click', function() {
     var context = snapshot.getContext('2d');
+    console.log(context);
     // Draw the video frame to the canvas.
     context.drawImage(player, 0, 0, snapshotCanvas.width,
         snapshotCanvas.height);
