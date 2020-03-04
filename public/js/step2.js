@@ -7,16 +7,16 @@ $(document).ready(function() {
 
 function projectClick(e) {
   // prevent the page from reloading
-  var timeSincePageLoad = Math.round(performance.now());
-  //ga('send', 'event', 'Timer', 'set');
-  //ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
-  ga('send', {
-    hitType: 'timing',
-    timingCategory: 'JS Dependencies',
-    timingVar: 'load',
-    timingValue: timeSincePageLoad
-  });
-  console.log(timeSincePageLoad);
+  // var timeSincePageLoad = Math.round(performance.now());
+  // //ga('send', 'event', 'Timer', 'set');
+  // //ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
+  // ga('send', {
+  //   hitType: 'timing',
+  //   timingCategory: 'JS Dependencies',
+  //   timingVar: 'load',
+  //   timingValue: timeSincePageLoad
+  // });
+  // console.log(timeSincePageLoad);
 
   e.preventDefault();
   // In an event handler, $(this) refers to

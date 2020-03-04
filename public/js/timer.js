@@ -83,7 +83,13 @@ minus.forEach((elem) => {
 // set the time
 set.onclick = () => {
   var timeSincePageLoad = Math.round(performance.now());
-  ga('send', 'event', 'Timer', 'set');
+  // ga('send', 'event', 'Timer', 'set');
+  ga('send', {
+    hitType: 'timing',
+    timingCategory: 'JS Dependencies',
+    timingVar: 'load',
+    timingValue: timeSincePageLoad
+  });
 
   //const hou = window.parseInt(hoursDiv.textContent) * 60;
   const min = (window.parseInt(minutesDiv.textContent)) * 60;
