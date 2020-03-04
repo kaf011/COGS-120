@@ -86,7 +86,6 @@ set.onclick = () => {
     //const hou = window.parseInt(hoursDiv.textContent) * 60;
     const min = (window.parseInt(minutesDiv.textContent)) * 60;
     let sec = min + window.parseInt(secondsDiv.textContent);
-    console.log(secondsDiv.textContent);
 
     let saveSec = sec;
     var duration = '';
