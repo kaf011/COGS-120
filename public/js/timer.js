@@ -167,10 +167,11 @@ set.onclick = () => {
 
     if (minutes == 0 && seconds == 0) {
       duration = saveSec;
-      duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
       if (duration >= 900 && duration <= 1500) {
         healthrate++;
       }
+      duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
+
 
       //console.log(duration);
       $.ajax({
@@ -199,15 +200,12 @@ set.onclick = () => {
     //     duration = sec*-1;
     // }else{
     duration = saveSec - sec;
-    duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
-    // };
     if (duration >= 900 && duration <= 1500) {
       healthrate++;
-    } <<
-    <<
-    << < HEAD
-    if (currentTime)
-      console.log(duration);
+    }
+    duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
+    // };
+
     $.ajax({
       type: "POST",
       url: '/rate',
@@ -229,96 +227,13 @@ set.onclick = () => {
 
 
 
-};
-
-// countdown function
-function countdown() {
-  // if(sec<0){
-  //     header2.style.display = 'none';
-  //     //additional.style.display = 'block';
-  // }
-  let minutes = Math.floor(sec / 60);
-  //let hours = Math.floor(minutes / 60);
-  let seconds = sec % 60;
-  // if (sec<0){minutes = Math.floor(-1*sec / 60);seconds = -1*sec%60} ;
-
-
-  minutes %= 60;
-
-  //if (hours <= 9) hours = '0' + hours;
-  if (minutes <= 9) minutes = '0' + minutes;
-  if (seconds <= 9) seconds = '0' + seconds;
-  // if (sec <= 0&&minutes <= 9) minutes = '0' + minutes;
-  // if (sec <= 0&&seconds <= 9) seconds = '0' + seconds;
-
-  //hoursDiv.textContent = hours;
-  minutesDiv.textContent = minutes;
-  secondsDiv.textContent = seconds;
-
-  sec--;
-
-  if (minutes == 0 && seconds == 0) {
-    duration = saveSec;
-    if (duration >= 900 && duration <= 1500) {
-      healthrate++;
-    }
-    duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
-
-
-    //console.log(duration);
-    $.ajax({
-      type: "POST",
-      url: '/rate',
-      data: {
-        newDate,
-        newTime,
-        duration,
-        healthrate
-      },
-      success: function(res) {
-        console.log(res);
-      }
-    });
-    window.location.replace("finish");
-  }
-
-}
-
-countdown();
-
-// paused the count down timer
-pause.onclick = () => {
-  // if(sec<0){
-  //     duration = sec*-1;
-  // }else{
-  duration = saveSec - sec;
-  if (duration >= 900 && duration <= 1500) {
-    healthrate++;
-  }
-  duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
-  // };
-
-  $.ajax({
-    type: "POST",
-    url: '/rate',
-    data: {
-      newDate,
-      newTime,
-      duration,
-      healthrate
-    },
-    success: function(res) {
-      console.log(res);
-    }
-  });
-  location.href = "finish";
-  //play.style.display = 'inline-block';
-  //pause.style.display = 'none';
-  clearInterval(setIn);
-};
-
-
-
+  <<
+  << << < HEAD
 }; >>>
 >>>
-> ba1c7c6eb3dfaf0f4dbfe93fd020ff0cdb9eb190
+>
+ba1c7c6eb3dfaf0f4dbfe93fd020ff0cdb9eb190
+  ===
+  === =
+}; >>>
+>>> > ba4dda059bc1f739fba62fa5341801931d6d4dac

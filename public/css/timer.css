@@ -11,6 +11,10 @@ body{
   margin-top: 40px;
   width: 15rem;
 }
+input{
+  width: 100px;
+  height: 80px;
+}
   /* end main style */
 
   /* start container */
