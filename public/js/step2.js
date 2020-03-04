@@ -7,6 +7,8 @@ $(document).ready(function() {
 
 function projectClick(e) {
   // prevent the page from reloading
+  ga('send', 'event', 'Timer', 'set');
+  ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
 
   e.preventDefault();
   // In an event handler, $(this) refers to

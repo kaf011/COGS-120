@@ -83,6 +83,7 @@ const secondsDiv = document.getElementById('seconds').children[0];
 // set the time
 set.onclick = () => {
   var timeSincePageLoad = Math.round(performance.now());
+  ga('send', 'event', 'Timer', 'set');
   ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
   document.getElementById('minutes').style.display = 'inline-block';
   document.getElementById('seconds').style.display = 'inline-block';
