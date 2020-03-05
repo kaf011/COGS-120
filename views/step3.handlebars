@@ -81,11 +81,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {{#if viewB}}
 <div id="setting">
   <div align="center" style="display:inline-block; margin-left:10px">
-    <input class="input" type="number" min="0" max="59"id="setMin" name="setMin"/>
+    <input class="input" id="bMin" type="number" min="0" max="59"id="setMin" name="setMin" placeholder="00"/>
     <p>minutes</p>
   </div>
   <div align="center" style="display:inline-block; margin-left:10px">
-    <input class="input" type="number" id="setSec" min="0" max="59" name="setSec"/>
+    <input class="input" id="bSec" type="number" id="setSec" min="0" max="59" name="setSec" placeholder="00"/>
     <p>seconds</p>
   </div>
 
@@ -108,6 +108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="margin-right:15px">seconds</p>
 
   </div> <!-- end second -->
+  <button class="btn suggest" id="20min" align="center">Use Recommended Time</button>
   <button class="btn set" id="set" align="center">Start</button>
 
 
@@ -137,6 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="margin-right:15px">second</p>
 
   </div> <!-- end second -->
+  <button class="btn suggest" id="20min" align="center">Use Recommended Time</button>
   <button class="btn set" id="set" align="center">Start</button>
 
 

@@ -7,6 +7,7 @@ const header2 = document.getElementById('header2');
 
 // get set time button
 const set = document.getElementById('set');
+const suggest=document.getElementById('20min');
 
 // get controls div
 const controls = document.getElementById('controls');
@@ -79,7 +80,11 @@ const secondsDiv = document.getElementById('seconds').children[0];
 //     }
 
 // });
-
+//change to suggest time
+suggest.onclick=()=>{
+  document.getElementById('bMin').value=20;
+  document.getElementById('bSec').value=00;
+}
 // set the time
 set.onclick = () => {
   var timeSincePageLoad = Math.round(performance.now());

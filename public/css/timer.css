@@ -14,6 +14,11 @@ body{
 input{
   width: 100px;
   height: 80px;
+  border-radius:15px;
+  border-color: #ffc764;
+  font-size: 40px;
+  font-style:bold;
+  color:#ffc764;
 }
   /* end main style */
 
@@ -106,7 +111,7 @@ input{
   }
 
   .containe .set {
-    margin-top:307px;
+    margin-top:15px;
     margin-left:60px;
     width:250px;
     background:#ffc764;
@@ -121,6 +126,19 @@ input{
     font-weight: bold;
   }
 
+  .containe .suggest {
+    margin-top:307px;
+    margin-left:55px;
+    font-size: 15px;
+    border-color:#ffc764;
+    padding: 10px 40px;
+    color: #ffc764;
+    cursor: pointer;
+    transition: .3s;
+    display: block;
+    box-shadow: 2px 5px 10px #e2b058;
+    font-weight: bold;
+  }
   .containe .set:hover {
     background: rgba(255, 255, 255, 0.5);
   }

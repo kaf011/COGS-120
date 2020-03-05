@@ -4,6 +4,7 @@ const header2 = document.getElementById('header2');
 // get plus and minus buttons
 const plus = document.querySelectorAll('.plus');
 const minus = document.querySelectorAll('.minus');
+const suggest=document.getElementById('20min');
 
 // get set time button
 const set = document.getElementById('set');
@@ -79,7 +80,10 @@ minus.forEach((elem) => {
   }
 
 });
-
+suggest.onclick=()=>{
+  minutesDiv.textContent = 20;
+  secondsDiv.textContent = '00';
+}
 // set the time
 set.onclick = () => {
   var timeSincePageLoad = Math.round(performance.now());
