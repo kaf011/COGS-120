@@ -84,6 +84,7 @@ const secondsDiv = document.getElementById('seconds').children[0];
 suggest.onclick=()=>{
   document.getElementById('bMin').value=20;
   document.getElementById('bSec').value='00';
+  ga('send', 'event', 'Bversion', 'test');
 }
 // set the time
 set.onclick = () => {
@@ -98,7 +99,7 @@ set.onclick = () => {
   // });
   ga('send', {
     hitType: 'timing',
-    timingCategory: 'JS Dependencies',
+    timingCategory: 'JS DependenciesB',
     timingVar: 'load',
     timingValue: 3549
   });

@@ -83,6 +83,7 @@ minus.forEach((elem) => {
 suggest.onclick=()=>{
   minutesDiv.textContent = 20;
   secondsDiv.textContent = '00';
+  ga('send', 'event', 'Aversion', 'test');
 }
 // set the time
 set.onclick = () => {
@@ -97,7 +98,7 @@ set.onclick = () => {
   // });
   ga('send', {
     hitType: 'timing',
-    timingCategory: 'JS Dependencies',
+    timingCategory: 'JS DependenciesA',
     timingVar: 'load',
     timingValue: timeSincePageLoad
   });
