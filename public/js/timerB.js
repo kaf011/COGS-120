@@ -89,6 +89,7 @@ suggest.onclick=()=>{
 // set the time
 set.onclick = () => {
   var timeSincePageLoad = Math.round(performance.now());
+  ga('send', 'event', 'B-version-user', 'test');
   console.log(timeSincePageLoad);
   //ga('send', 'event', 'Timer', 'set');
   // ga('send', {
