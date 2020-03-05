@@ -104,14 +104,14 @@ set.onclick = () => {
   });
 
 
-  if (window.performance) {
-    // Gets the number of milliseconds since page load
-    // (and rounds the result since the value must be an integer).
-    var timeSincePageLoad = Math.round(performance.now());
+  // if (window.performance) {
+  //   // Gets the number of milliseconds since page load
+  //   // (and rounds the result since the value must be an integer).
+  //   var timeSincePageLoad = Math.round(performance.now());
 
-    // Sends the timing hit to Google Analytics.
-    ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad);
-  }
+  //   // Sends the timing hit to Google Analytics.
+  //   ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad);
+  // }
 
   //const hou = window.parseInt(hoursDiv.textContent) * 60;
   const min = (window.parseInt(minutesDiv.textContent)) * 60;
@@ -150,6 +150,7 @@ set.onclick = () => {
   } else {
 
     set.style.display = 'none';
+    suggest.style.display='none';
     header.style.display = 'none';
     header1.style.display = 'none';
     //additional.style.display = 'none';
@@ -247,9 +248,8 @@ set.onclick = () => {
         console.log(res);
       }
     });
-    location.href = "finish";
-    //play.style.display = 'inline-block';
-    //pause.style.display = 'none';
+    //location.href = "finish";
+    
     clearInterval(setIn);
   };
 

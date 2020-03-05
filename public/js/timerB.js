@@ -159,6 +159,7 @@ set.onclick = () => {
   } else {
 
     set.style.display = 'none';
+    suggest.style.display='none';
     header.style.display = 'none';
     header1.style.display = 'none';
     //additional.style.display = 'none';
