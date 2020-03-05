@@ -121,9 +121,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       dataType:'json',
       success:(data)=>{
         //console.log(data);
-        console.log(data.imageId)
+        console.log(data)
+        //console.log(data.imageId)
         imageSrc = mapImgSrc[data.imageId]
-        console.log(imageSrc)
+        //console.log(imageSrc)
         $('#user-avatar').attr('src', imageSrc)
         $('#eatBuddy').html(data.eatBuddy)
 
