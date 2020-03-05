@@ -125,6 +125,7 @@ app.post('/signup_step2', (req, res) => {
 });
 
 app.post('/rate', (req, res) => {
+  console.log("success")
   let {
     newDate,
     newTime,
@@ -137,6 +138,7 @@ app.post('/rate', (req, res) => {
     'Duration': duration,
     'Health': healthrate
   }
+  console.log(obj);
   user_data.users[userName].records.reverse();
   user_data.users[userName].records.push(obj);
   user_data.users[userName].records.reverse();

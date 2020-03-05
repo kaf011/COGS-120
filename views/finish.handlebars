@@ -75,6 +75,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       dataType:'json',
       success:(data)=>{
         //console.log(data.eatBuddy);
+        console.log(data);
         imageSrc = mapImgSrc[data.imageId]
         console.log(data.records[0].Health)
         $('#user-avatar').attr('src', imageSrc)

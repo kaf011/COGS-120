@@ -248,9 +248,8 @@ set.onclick = () => {
         console.log(res);
       }
     });
-    location.href = "finish";
-    //play.style.display = 'inline-block';
-    //pause.style.display = 'none';
+    //location.href = "finish";
+    
     clearInterval(setIn);
   };
 
