@@ -83,7 +83,7 @@ const secondsDiv = document.getElementById('seconds').children[0];
 //change to suggest time
 suggest.onclick=()=>{
   document.getElementById('bMin').value=20;
-  document.getElementById('bSec').value=00;
+  document.getElementById('bSec').value='00';
 }
 // set the time
 set.onclick = () => {
@@ -119,8 +119,8 @@ set.onclick = () => {
   //const hou = window.parseInt(hoursDiv.textContent) * 60;
   // const min = (window.parseInt(minutesDiv.textContent)) * 60;
   // let sec = min + window.parseInt(secondsDiv.textContent);
-  var min = document.getElementById("setMin").value * 60;
-  var sec = document.getElementById("setSec").value;
+  var min = document.getElementById("bMin").value * 60;
+  var sec = document.getElementById("bSec").value;
   sec = Number(min) + Number(sec);
 
 
