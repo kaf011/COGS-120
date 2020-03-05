@@ -7,7 +7,7 @@ const header2 = document.getElementById('header2');
 
 // get set time button
 const set = document.getElementById('set');
-const suggest=document.getElementById('20min');
+const suggest=document.getElementById('20minB');
 
 // get controls div
 const controls = document.getElementById('controls');

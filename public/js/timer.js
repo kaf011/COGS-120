@@ -4,7 +4,7 @@ const header2 = document.getElementById('header2');
 // get plus and minus buttons
 const plus = document.querySelectorAll('.plus');
 const minus = document.querySelectorAll('.minus');
-const suggest=document.getElementById('20min');
+const suggest=document.getElementById('20minA');
 
 // get set time button
 const set = document.getElementById('set');
