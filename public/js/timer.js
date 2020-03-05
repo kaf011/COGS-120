@@ -248,7 +248,7 @@ set.onclick = () => {
         console.log(res);
       }
     });
-    //location.href = "finish";
+    location.href = "finish";
     
     clearInterval(setIn);
   };
