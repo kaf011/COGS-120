@@ -101,7 +101,7 @@ set.onclick = () => {
     hitType: 'timing',
     timingCategory: 'JS DependenciesB',
     timingVar: 'load',
-    timingValue: 3549
+    timingValue: timeSincePageLoad
   });
   // ga('send', 'event', 'Timer', 'set');
   // if (window.performance) {
