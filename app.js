@@ -115,6 +115,7 @@ app.post('/signup_step2', (req, res) => {
 
   user_data.users[name]['imageId'] = imageId;
   user_data.users[name]['eatBuddy'] = eatBuddy;
+  user_data.users[name]['records'] = [];
 
   //console.log(step1_data)
 
