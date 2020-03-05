@@ -84,7 +84,7 @@ const secondsDiv = document.getElementById('seconds').children[0];
 suggest.onclick=()=>{
   document.getElementById('bMin').value=20;
   document.getElementById('bSec').value='00';
-  ga('send', 'event', 'B-version', 'test');
+  ga('send', 'event', 'B-version-test', 'test');
 }
 // set the time
 set.onclick = () => {
