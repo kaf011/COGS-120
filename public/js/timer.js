@@ -4,7 +4,7 @@ const header2 = document.getElementById('header2');
 // get plus and minus buttons
 const plus = document.querySelectorAll('.plus');
 const minus = document.querySelectorAll('.minus');
-const suggest=document.getElementById('20min');
+const suggest = document.getElementById('20minA');
 
 // get set time button
 const set = document.getElementById('set');
@@ -80,7 +80,7 @@ minus.forEach((elem) => {
   }
 
 });
-suggest.onclick=()=>{
+suggest.onclick = () => {
   minutesDiv.textContent = 20;
   secondsDiv.textContent = '00';
   ga('send', 'event', 'A-version', 'test');
@@ -150,7 +150,7 @@ set.onclick = () => {
   } else {
 
     set.style.display = 'none';
-    suggest.style.display='none';
+    suggest.style.display = 'none';
     header.style.display = 'none';
     header1.style.display = 'none';
     //additional.style.display = 'none';
@@ -249,7 +249,7 @@ set.onclick = () => {
       }
     });
     location.href = "finish";
-    
+
     clearInterval(setIn);
   };
 

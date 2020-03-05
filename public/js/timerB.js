@@ -7,7 +7,7 @@ const header2 = document.getElementById('header2');
 
 // get set time button
 const set = document.getElementById('set');
-const suggest=document.getElementById('20min');
+const suggest = document.getElementById('20minB');
 
 // get controls div
 const controls = document.getElementById('controls');
@@ -81,9 +81,9 @@ const secondsDiv = document.getElementById('seconds').children[0];
 
 // });
 //change to suggest time
-suggest.onclick=()=>{
-  document.getElementById('bMin').value=20;
-  document.getElementById('bSec').value='00';
+suggest.onclick = () => {
+  document.getElementById('bMin').value = 20;
+  document.getElementById('bSec').value = '00';
   ga('send', 'event', 'B-version', 'test');
 }
 // set the time
@@ -159,7 +159,7 @@ set.onclick = () => {
   } else {
 
     set.style.display = 'none';
-    suggest.style.display='none';
+    suggest.style.display = 'none';
     header.style.display = 'none';
     header1.style.display = 'none';
     //additional.style.display = 'none';
