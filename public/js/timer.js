@@ -83,7 +83,7 @@ minus.forEach((elem) => {
 suggest.onclick=()=>{
   minutesDiv.textContent = 20;
   secondsDiv.textContent = '00';
-  ga('send', 'event', 'Aversion', 'test');
+  ga('send', 'event', 'A-version', 'test');
 }
 // set the time
 set.onclick = () => {
