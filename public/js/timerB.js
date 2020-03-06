@@ -210,7 +210,7 @@ set.onclick = () => {
       if (duration >= 900 && duration <= 1500) {
         healthrate++;
       }
-      duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
+      duration = Math.floor(duration / 60) + "min" + duration % 60 + "sec";
 
 
       //console.log(duration);
@@ -243,7 +243,7 @@ set.onclick = () => {
     if (duration >= 900 && duration <= 1500) {
       healthrate++;
     }
-    duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
+    duration = Math.floor(duration / 60) + "min" + duration % 60 + "sec";
     // };
 
     $.ajax({
