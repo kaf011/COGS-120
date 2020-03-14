@@ -68,10 +68,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	        <input type="submit" value="Upload">
         </form> -->
         <div class="photo" align="center" display="inline-block">
-          <video id="player" width=240 height=180 controls autoplay playsinline></video>
-          <button class="btn photo-btn" id="capture" style="margin: 15px;" ><img src="images/camera.png" width="50%"/> </button>
+          <video id="player" width=240 height=120 controls autoplay playsinline></video>
+          <button class="btn photo-btn" id="capture" ><img src="images/camera.png" width="50%"/> </button>
 
-          <canvas id="snapshot" width=240 height=180></canvas>
+          <canvas id="snapshot" width=200></canvas>
         </div>
     </div>
   </div>
@@ -95,16 +95,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     video: videoConstraints,
     audio: false
   };
-  navigator.mediaDevices
-    .getUserMedia(constraints)
-    .then(stream => {
-      currentStream = stream;
-      player.srcObject = stream;
-      return navigator.mediaDevices.enumerateDevices();
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  // navigator.mediaDevices
+  //   .getUserMedia(constraints)
+  //   .then(stream => {
+  //     currentStream = stream;
+  //     player.srcObject = stream;
+  //     return navigator.mediaDevices.enumerateDevices();
+  //   })
+  //   .catch(error => {
+  //     console.error(error);
+  //   });
 
 
   var handleSuccess = function(stream) {

@@ -19,20 +19,31 @@ body {
   margin-bottom: 5%;
 }
 
-#additional h3{
+#additional h3 {
   padding-top: 5%;
-  font-size:15px;
-  color:black;
-  font-weight:bold;
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
 }
-#additional h1{ 
-  animation: change 1s  ease-in  infinite ; 
-  font-size: 36px; 
-  font-weight: bold}
+
+#additional h1 {
+  animation: change 1s ease-in infinite;
+  font-size: 36px;
+  font-weight: bold
+}
+
 @keyframes change {
-  0%{ text-shadow: 0 0 4px #c4994f}
-  50%{ text-shadow: 0 0 40px #c4994f}
-  100%{ text-shadow: 0 0 4px #c4994f}
+  0% {
+    text-shadow: 0 0 4px #c4994f
+  }
+
+  50% {
+    text-shadow: 0 0 40px #c4994f
+  }
+
+  100% {
+    text-shadow: 0 0 4px #c4994f
+  }
 }
 
 .step p {
@@ -77,6 +88,9 @@ body {
 }
 
 .photo-btn {
+  margin: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: 80px;
   height: 50px;
   font-size: 15px;
@@ -106,9 +120,11 @@ body {
 .food-lock {
   pointer-events: none;
 }
+
 .food-btn-chosen:active {
   border: #e2b058 solid 5px;
 }
+
 .food-btn-chosen {
   background-color: #ffffff;
   pointer-events: auto;
