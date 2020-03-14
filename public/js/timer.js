@@ -4,7 +4,7 @@ const header2 = document.getElementById('header2');
 // get plus and minus buttons
 const plus = document.querySelectorAll('.plus');
 const minus = document.querySelectorAll('.minus');
-const suggest = document.getElementById('20minA');
+const suggest = document.getElementById('testA');
 
 // get set time button
 const set = document.getElementById('set');
@@ -83,10 +83,11 @@ minus.forEach((elem) => {
 suggest.onclick = () => {
   minutesDiv.textContent = 20;
   secondsDiv.textContent = '00';
-  ga('send', 'event', 'A-version', 'test');
+  ga('send', 'event', 'A-version-test', 'test');
 }
 // set the time
 set.onclick = () => {
+
   var timeSincePageLoad = Math.round(performance.now());
   console.log(timeSincePageLoad);
   //ga('send', 'event', 'Timer', 'set');
@@ -199,8 +200,8 @@ set.onclick = () => {
       if (duration >= 900 && duration <= 1500) {
         healthrate++;
       }
-      duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
 
+      duration = Math.floor(duration / 60) + "min" + duration % 60 + "sec";
 
       //console.log(duration);
       $.ajax({
@@ -232,7 +233,8 @@ set.onclick = () => {
     if (duration >= 900 && duration <= 1500) {
       healthrate++;
     }
-    duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
+    //console.log(duration);
+    duration = Math.floor(duration / 60) + "min" + duration % 60 + "sec";
     // };
 
     $.ajax({

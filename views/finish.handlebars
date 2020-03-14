@@ -52,10 +52,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>Health Rate</h3>
         <a href="#" id="health"></a>
     </div>
+    <a class="trigger_popup_fricc"><i class="fas fa-question-circle"></i></a>
+
+<div class="hover_bkgr_fricc" align="center">
+    <span class="helper"></span>
+    <div class="help">
+        <div class="popupCloseButton" align="center">&times;</div>
+        <h2>How do we calculate the health rate?</h2>
+        <p>1.If you follow all the steps and eat, you earn one star
+          <br />2.If you eat duration is longer than 15minutes and less than 25 minutes, you earn a star
+          <br/>3.If you eat during the right eating time, 7-9 for breakfast, 11-13 for lunch, and 5-7 for dinner, you earn a star
+        </p>
+    </div>
+</div>
     <a href="profile" class="btn">DONE</a>
     </div>
 
 </div>
+
+
 
 
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -97,6 +112,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 })
+
+$(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
 </script>
 
 </html>

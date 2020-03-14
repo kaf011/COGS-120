@@ -7,7 +7,7 @@ const header2 = document.getElementById('header2');
 
 // get set time button
 const set = document.getElementById('set');
-const suggest = document.getElementById('20minB');
+const suggest = document.getElementById('testB');
 
 // get controls div
 const controls = document.getElementById('controls');
@@ -81,189 +81,198 @@ const secondsDiv = document.getElementById('seconds').children[0];
 
 // });
 //change to suggest time
+<<
+<< << < HEAD
 suggest.onclick = () => {
-  document.getElementById('bMin').value = 20;
-  document.getElementById('bSec').value = '00';
-  ga('send', 'event', 'B-version', 'test');
-}
-// set the time
-set.onclick = () => {
-  var timeSincePageLoad = Math.round(performance.now());
-  console.log(timeSincePageLoad);
-  //ga('send', 'event', 'Timer', 'set');
-  // ga('send', {
-  //   hitType: 'timing',
-  //   timingCategory: 'JS Dependencies',
-  //   timingVar: 'load',
-  //   timingValue: timeSincePageLoad
-  // });
-  ga('send', {
-    hitType: 'timing',
-    timingCategory: 'JS DependenciesB',
-    timingVar: 'load',
-    timingValue: timeSincePageLoad
-  });
-  // ga('send', 'event', 'Timer', 'set');
-  // if (window.performance) {
-  //   // Gets the number of milliseconds since page load
-  //   // (and rounds the result since the value must be an integer).
-  //   var timeSincePageLoad = Math.round(performance.now());
-  //
-  //   // Sends the timing hit to Google Analytics.
-  //   ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad);
-  // }
-  // ga('send', 'event', 'Timer', 'set');
-  // ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
-  document.getElementById('minutes').style.display = 'inline-block';
-  document.getElementById('seconds').style.display = 'inline-block';
-  document.getElementById('setting').style.display = 'none';
-  //const hou = window.parseInt(hoursDiv.textContent) * 60;
-  // const min = (window.parseInt(minutesDiv.textContent)) * 60;
-  // let sec = min + window.parseInt(secondsDiv.textContent);
-  var min = document.getElementById("bMin").value * 60;
-  var sec = document.getElementById("bSec").value;
-  sec = Number(min) + Number(sec);
+    document.getElementById('bMin').value = 20;
+    document.getElementById('bSec').value = '00';
+    ga('send', 'event', 'B-version', 'test'); ===
+    === =
+    suggest.onclick = () => {
+      document.getElementById('bMin').value = 20;
+      document.getElementById('bSec').value = '00';
+      ga('send', 'event', 'B-version-test', 'test'); >>>
+      >>> > 3 cf56c95d02698aa3e5d909b34ca5d2bbbb42b4a
+    }
+    // set the time
+    set.onclick = () => {
+      var timeSincePageLoad = Math.round(performance.now());
+
+      console.log(timeSincePageLoad);
+      //ga('send', 'event', 'Timer', 'set');
+      // ga('send', {
+      //   hitType: 'timing',
+      //   timingCategory: 'JS Dependencies',
+      //   timingVar: 'load',
+      //   timingValue: timeSincePageLoad
+      // });
+      ga('send', {
+        hitType: 'timing',
+        timingCategory: 'JS DependenciesB',
+        timingVar: 'load',
+        timingValue: timeSincePageLoad
+      });
+      // ga('send', 'event', 'Timer', 'set');
+      // if (window.performance) {
+      //   // Gets the number of milliseconds since page load
+      //   // (and rounds the result since the value must be an integer).
+      //   var timeSincePageLoad = Math.round(performance.now());
+      //
+      //   // Sends the timing hit to Google Analytics.
+      //   ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad);
+      // }
+      // ga('send', 'event', 'Timer', 'set');
+      // ga('send', 'timing', 'Timer', 'set', timeSincePageLoad);
+      document.getElementById('minutes').style.display = 'inline-block';
+      document.getElementById('seconds').style.display = 'inline-block';
+      document.getElementById('setting').style.display = 'none';
+      //const hou = window.parseInt(hoursDiv.textContent) * 60;
+      // const min = (window.parseInt(minutesDiv.textContent)) * 60;
+      // let sec = min + window.parseInt(secondsDiv.textContent);
+      var min = document.getElementById("bMin").value * 60;
+      var sec = document.getElementById("bSec").value;
+      sec = Number(min) + Number(sec);
 
 
 
-  let saveSec = sec;
-  var duration = '';
-  var date = new Date();
-  var currentTime = date.getHours();
-  var newMin = date.getMinutes();
-  if (newMin <= 9) {
-    newMin = "0" + newMin;
-  }
-  var newTime;
-  var newDate = (date.getMonth() + 1) + "/" + date.getDate();
-  if (currentTime > 12) {
-    newTime = date.getHours() - 12 + ":" + newMin + "PM";
-  } else {
-    newTime = date.getHours() + ":" + newMin + "AM";
-  }
-  var healthrate = 1;
-  if (currentTime >= 7 && currentTime <= 9) {
-    healthrate++;
-  }
-  if (currentTime >= 11 && currentTime <= 13) {
-    healthrate++;
-  }
-  if (currentTime >= 17 && currentTime <= 19) {
-    healthrate++;
-  }
-
-  if (sec === 0) {
-
-    alert('you should set a value');
-
-  } else {
-
-    set.style.display = 'none';
-    suggest.style.display = 'none';
-    header.style.display = 'none';
-    header1.style.display = 'none';
-    //additional.style.display = 'none';
-    header2.style.display = 'block';
-    controls.style.display = 'block';
-
-    // plus.forEach((elem) => {
-    //     elem.style.display = 'none';
-    // });
-
-    // minus.forEach((elem) => {
-    //     elem.style.display = 'none';
-    // });
-
-    var setIn = setInterval(countdown, 1000);
-  }
-
-  // countdown function
-  function countdown() {
-    // if(sec<0){
-    //     header2.style.display = 'none';
-    //     //additional.style.display = 'block';
-    // }
-    let minutes = Math.floor(sec / 60);
-    //let hours = Math.floor(minutes / 60);
-    let seconds = sec % 60;
-    // if (sec<0){minutes = Math.floor(-1*sec / 60);seconds = -1*sec%60} ;
-
-
-    minutes %= 60;
-    console.log(minutes);
-
-    //if (hours <= 9) hours = '0' + hours;
-    if (minutes <= 9) minutes = '0' + minutes;
-    if (seconds <= 9) seconds = '0' + seconds;
-    // if (sec <= 0&&minutes <= 9) minutes = '0' + minutes;
-    // if (sec <= 0&&seconds <= 9) seconds = '0' + seconds;
-
-    //hoursDiv.textContent = hours;
-    minutesDiv.textContent = minutes;
-    secondsDiv.textContent = seconds;
-
-    sec--;
-
-    if (minutes == 0 && seconds == 0) {
-      duration = saveSec;
-      if (duration >= 900 && duration <= 1500) {
+      let saveSec = sec;
+      var duration = '';
+      var date = new Date();
+      var currentTime = date.getHours();
+      var newMin = date.getMinutes();
+      if (newMin <= 9) {
+        newMin = "0" + newMin;
+      }
+      var newTime;
+      var newDate = (date.getMonth() + 1) + "/" + date.getDate();
+      if (currentTime > 12) {
+        newTime = date.getHours() - 12 + ":" + newMin + "PM";
+      } else {
+        newTime = date.getHours() + ":" + newMin + "AM";
+      }
+      var healthrate = 1;
+      if (currentTime >= 7 && currentTime <= 9) {
         healthrate++;
       }
-      duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
-
-
-      //console.log(duration);
-      $.ajax({
-        type: "POST",
-        url: '/rate',
-        data: {
-          newDate,
-          newTime,
-          duration,
-          healthrate
-        },
-        success: function(res) {
-          console.log(res);
-        }
-      });
-      window.location.replace("finish");
-    }
-
-  }
-
-  countdown();
-
-  // paused the count down timer
-  pause.onclick = () => {
-    // if(sec<0){
-    //     duration = sec*-1;
-    // }else{
-    duration = saveSec - sec;
-    if (duration >= 900 && duration <= 1500) {
-      healthrate++;
-    }
-    duration = Math.floor(sec / 60) + "min" + duration % 60 + "sec";
-    // };
-
-    $.ajax({
-      type: "POST",
-      url: '/rate',
-      data: {
-        newDate,
-        newTime,
-        duration,
-        healthrate
-      },
-      success: function(res) {
-        console.log(res);
+      if (currentTime >= 11 && currentTime <= 13) {
+        healthrate++;
       }
-    });
-    location.href = "finish";
-    //play.style.display = 'inline-block';
-    //pause.style.display = 'none';
-    clearInterval(setIn);
-  };
+      if (currentTime >= 17 && currentTime <= 19) {
+        healthrate++;
+      }
+
+      if (sec === 0) {
+
+        alert('you should set a value');
+
+      } else {
+
+        set.style.display = 'none';
+        suggest.style.display = 'none';
+        header.style.display = 'none';
+        header1.style.display = 'none';
+        //additional.style.display = 'none';
+        header2.style.display = 'block';
+        controls.style.display = 'block';
+
+        // plus.forEach((elem) => {
+        //     elem.style.display = 'none';
+        // });
+
+        // minus.forEach((elem) => {
+        //     elem.style.display = 'none';
+        // });
+
+        var setIn = setInterval(countdown, 1000);
+      }
+
+      // countdown function
+      function countdown() {
+        // if(sec<0){
+        //     header2.style.display = 'none';
+        //     //additional.style.display = 'block';
+        // }
+        let minutes = Math.floor(sec / 60);
+        //let hours = Math.floor(minutes / 60);
+        let seconds = sec % 60;
+        // if (sec<0){minutes = Math.floor(-1*sec / 60);seconds = -1*sec%60} ;
+
+
+        minutes %= 60;
+        console.log(minutes);
+
+        //if (hours <= 9) hours = '0' + hours;
+        if (minutes <= 9) minutes = '0' + minutes;
+        if (seconds <= 9) seconds = '0' + seconds;
+        // if (sec <= 0&&minutes <= 9) minutes = '0' + minutes;
+        // if (sec <= 0&&seconds <= 9) seconds = '0' + seconds;
+
+        //hoursDiv.textContent = hours;
+        minutesDiv.textContent = minutes;
+        secondsDiv.textContent = seconds;
+
+        sec--;
+
+        if (minutes == 0 && seconds == 0) {
+          duration = saveSec;
+          if (duration >= 900 && duration <= 1500) {
+            healthrate++;
+          }
+          duration = Math.floor(duration / 60) + "min" + duration % 60 + "sec";
+
+
+          //console.log(duration);
+          $.ajax({
+            type: "POST",
+            url: '/rate',
+            data: {
+              newDate,
+              newTime,
+              duration,
+              healthrate
+            },
+            success: function(res) {
+              console.log(res);
+            }
+          });
+          window.location.replace("finish");
+        }
+
+      }
+
+      countdown();
+
+      // paused the count down timer
+      pause.onclick = () => {
+        // if(sec<0){
+        //     duration = sec*-1;
+        // }else{
+        duration = saveSec - sec;
+        if (duration >= 900 && duration <= 1500) {
+          healthrate++;
+        }
+        duration = Math.floor(duration / 60) + "min" + duration % 60 + "sec";
+        // };
+
+        $.ajax({
+          type: "POST",
+          url: '/rate',
+          data: {
+            newDate,
+            newTime,
+            duration,
+            healthrate
+          },
+          success: function(res) {
+            console.log(res);
+          }
+        });
+        location.href = "finish";
+        //play.style.display = 'inline-block';
+        //pause.style.display = 'none';
+        clearInterval(setIn);
+      };
 
 
 
-};
+    };
