@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         console.log(rgb);
   });
 
-  navigator.mediaDevices.getUserMedia({video: true})
+  navigator.mediaDevices.getUserMedia({video: videoConstraints})
       .then(handleSuccess);
 </script>
 </html>
