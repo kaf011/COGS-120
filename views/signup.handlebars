@@ -46,6 +46,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="text" class="name" name="username" placeholder="Username" />
       <input type="password" class="pw" name="pass" placeholder="Password" />
       <input type="password" name="cpass" placeholder="Confirm Password" />
+      <p id="alert"> 🥺Different password...</p>
       <input type="text" name="email" placeholder="Email" />
       <input id="next" type="button" name="next" class="next action-button" value="Next" />
       <h6 class="login_text" style="padding: 10px ">Already have an account?</h6>
@@ -90,7 +91,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $(document).ready(function () {
         var eatBuddy = '';
         var name = '';
-        var imageSrc = ''
+        var imageSrc = '';
+        var password = '';
         let mapImgSrc = {
           'img1': 'images/shiba-inu.png',
           'img2': 'images/cat.png',
@@ -109,18 +111,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (key == 'username') {
               name = value
             }
+            // if (key == 'pass'){
+            //   password = value;
+            // }
           }
-          console.log(name)
-          $.ajax({
-            type: "POST",
-            url: '/signup_step1',
-            data: reqData,
-            success: function (res) {
-              // let { step1 } = res;
-              // eatBuddy = step1[name]['username']
-              // $('#eatBuddy').html(eatBuddy)
-            }
-          });
+
+            console.log(name)
+            $.ajax({
+              type: "POST",
+              url: '/signup_step1',
+              data: reqData,
+              success: function (res) {
+                // let { step1 } = res;
+                // eatBuddy = step1[name]['username']
+                // $('#eatBuddy').html(eatBuddy)
+              }
+            });
+          
+
+
         });
 
         $('#next2').click(function() {

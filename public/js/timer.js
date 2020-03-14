@@ -4,10 +4,15 @@ const header2 = document.getElementById('header2');
 // get plus and minus buttons
 const plus = document.querySelectorAll('.plus');
 const minus = document.querySelectorAll('.minus');
+
+const plusBtn = document.getElementById('plus');
+const minusBtn = document.getElementById('minus');
+
 const suggest = document.getElementById('testA');
 
 // get set time button
 const set = document.getElementById('set');
+
 
 // get controls div
 const controls = document.getElementById('controls');
@@ -85,6 +90,8 @@ suggest.onclick = () => {
   secondsDiv.textContent = '00';
   ga('send', 'event', 'A-version-test', 'test');
 }
+
+
 // set the time
 set.onclick = () => {
 

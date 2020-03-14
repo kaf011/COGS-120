@@ -13,9 +13,13 @@ body {
   margin-right: 20;
 }
 
+.step h1 {
+  font-size: 34px;
+}
+
 .step h2 {
   padding-top: 20%;
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 5%;
 }
 
@@ -28,7 +32,7 @@ body {
 
 #additional h1 {
   animation: change 1s ease-in infinite;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: bold
 }
 
@@ -69,7 +73,7 @@ body {
 
 .next-btn {
   position: absolute;
-  bottom: 50px;
+  bottom: 100px;
   width: 250px;
   right: 65px;
   font-size: 15px;
@@ -89,9 +93,10 @@ body {
 }
 
 .photo-btn {
+  left: 50%;
   margin: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   width: 80px;
   height: 50px;
   font-size: 15px;
@@ -115,6 +120,18 @@ body {
   margin: 10px;
   width: 80px;
   height: 80px;
+  box-shadow: 2px 5px 10px #e2b058;
+  pointer-events: none;
+}
+
+.time-btn {
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
   box-shadow: 2px 5px 10px #e2b058;
 }
 
@@ -141,4 +158,13 @@ body {
   /* float: left; */
   /* box-shadow: 2px 6px 10px #e6e6e6; */
   /* clear: left; meaning empty-float, prevent it from wrapping img to the left */
+}
+
+.fa-sort-up {
+  color: white;
+  margin-left: 10px;
+}
+
+.fa-sort-down {
+  color: white;
 }

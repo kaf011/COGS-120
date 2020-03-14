@@ -222,3 +222,10 @@ body {
 .name {
   width: 40%;
 }
+
+#alert {
+  height: 0px;
+  margin: 0px;
+  weight: bold;
+  opacity: 0;
+}

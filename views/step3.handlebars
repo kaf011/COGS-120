@@ -17,7 +17,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- My Stylesheet -->
   <link rel="stylesheet" href="css/step.css">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/cf059f7d51.js" crossorigin="anonymous"></script>
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="css/timer.css">
 
   <!-- Bootstrap Javascript-->
@@ -32,7 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-158844136-2', 'auto');
+  ga('create', 'UA-158844136-3', 'auto');
   ga('require', 'GTM-NB36ZMJ');
   ga('send', 'pageview');
   </script>
@@ -95,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="minus" style="margin:-10px 5px"><i class="fa fa-chevron-down fa-3x"></i></button> --}}
 
       <h3 style="margin-left:10px">00</h3>
-      <p>minutes</p>
+      <p class="time-text" style="text-shadow: 2px 2px 5px #e2b058;">minutes</p>
 
   </div> <!-- end minute -->
 
@@ -105,7 +108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button class="minus" style="margin:-10px -3px"><i class="fa fa-chevron-down fa-3x"></i></button> --}}
 
       <h3 style="margin-left:20px; margin-right:30px">00</h3>
-      <p style="margin-right:15px">seconds</p>
+      <p class="time-text" style="margin-right:15px">seconds</p>
 
   </div> <!-- end second -->
   <button class="btn suggest" id="testB" align="center" >Use Recommended Time</button>
@@ -121,21 +124,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="/js/timerB.js"></script>
 {{else}}
   <div class="minutes" id="minutes"> <!-- start minute -->
-      <button class="plus" style="margin:10px 5px"><i class="fa fa-chevron-up fa-3x"></i></button>
-      <button class="minus" style="margin:-10px 5px"><i class="fa fa-chevron-down fa-3x"></i></button>
+      <button id="plus" class="plus" style="margin:10px 20px"><i class="fas fa-sort-up fa-3x"></i></button>
+      <button id="minus" class="minus" style="margin:-10px 20px"><i class="fas fa-sort-down fa-3x"></i></button>
 
-      <h3 style="margin-left:10px">00</h3>
-      <p>minute</p>
+      <button class="time-btn" style="color:#ffaf23; font-size: 30px;">00</button>
+      <p style="color:white; margin:0px 20px">minutes</p>
 
   </div> <!-- end minute -->
 
   <div class="seconds" id="seconds"> <!-- start second -->
 
-      <button class="plus" style="margin:10px -3px"><i class="fa fa-chevron-up fa-3x"></i></button>
-      <button class="minus" style="margin:-10px -3px"><i class="fa fa-chevron-down fa-3x"></i></button>
+      <button class="plus" style="margin:10px 20px;"><i align="center" class="fa fa-sort-up fa-3x"></i></button>
+      <button class="minus" style="margin:-10px 20px"><i align="center" class="fa fa-sort-down fa-3x"></i></button>
 
-      <h3 style="margin-left:20px; margin-right:30px">00</h3>
-      <p style="margin-right:15px">second</p>
+      <button class="time-btn" style="color:#ffaf23; font-size: 30px;">00</button>
+      <p style="color:white; margin:0px 20px">seconds</p>
 
   </div> <!-- end second -->
   <button class="btn suggest" id="testA" align="center" style="margin-top:200px">Use Recommended Time</button>
